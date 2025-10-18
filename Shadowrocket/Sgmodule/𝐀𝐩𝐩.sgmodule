@@ -1,0 +1,161 @@
+#!name=𝐀𝐩𝐩
+#!desc=Unlock Apps for Free❗️✅
+#!author=𝗞𝗮𝘄𝗢𝗮𝘁ツ
+#!Update=2025-07-22
+#!====================================
+#!⚠️【Header Rewrite】
+# X-RevenueCat-ETag
+
+#!------------------------------------------
+
+[URL Rewrite]
+# > Goodnotes6
+^https:\/\/isi\.csan\.goodnotes.*\/v1\/subscribers\/[a-f0-9\-]{36}$ https://goodenotes6.lovebabyforever.workers.dev/ header
+
+# > Revenuecat Universal
+#^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://rc-backup.lovebabyforever.workers.dev header
+#^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://reven.lovebabyforever.workers.dev header
+#^https:\/\/rc\.visionarytech\.ltd\/.+\/(receipts$|subscribers\/[^/]+$) https://rc.lovebabyforever.workers.dev header
+
+[Script]
+#Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
+Reheji = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, max-size=-1, timeout=60
+
+Reheji = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60
+
+#iTunes-系列 hostname = buy.itunes.apple.com
+iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
+
+#Bending-系列 hostname = *.oracle.bendingspoonsapps.com
+bending = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, max-size=-1, timeout=60
+
+#Adapty-系列 hostname = api.adapty.io
+adapty = type=http-response, pattern=^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js, requires-body=true, max-size=-1, timeout=60
+
+#Apphud-系列 hostname = *.apphud.com
+apphud = type=http-response, pattern=^https?:\/\/.*\.apphud\.com\/v\d\/(subscriptions|customers)$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/apphud.js, requires-body=true, max-size=-1, timeout=60
+
+#SNOW-系列 hostname = *.snow.me
+snow = type=http-response, pattern=^https:\/\/.*\.snow\.me\/v1\/purchase\/subscription\/subscriber\/status$, script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/snow.js, requires-body=true, max-size=-1, timeout=60
+
+#AppRaven+Premium
+AppRaven = type=http-response, pattern=https://appraven.net/appraven/graphql, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/AppRaven.js, requires-body=true, max-size=-1, timeout=60
+
+#DuetDisplay+DuetAir
+DuetDisplay = type=http-response, pattern=https://rdp.duetdisplay.com/v1/users/validateReceipt, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/DuetDisplay.js, requires-body=true, max-size=-1, timeout=60
+
+#iTranscreen-屏幕翻译
+iTranscreen = type=http-response, pattern=^https?:\/\/.+.(itranscreen|tencentcs).+\/(settings|api\/v1\/user\/quota\?user_id).*$, script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/iTranscreen.js, requires-body=true, max-size=-1, timeout=60
+
+#iMe+Premium
+iMe = type=http-response, pattern=https:\/\/api\.imem\.app\/api\/premium\/getOwnStatus, script-path=https://raw.githubusercontent.com/Mike-offers/Rewrite/refs/heads/master/QuantumultX/iMe.js, requires-body=true, max-size=-1, timeout=60
+
+#Nicegram+Premium
+nicegram = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth), script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/nicegram.js, requires-body=true, max-size=-1, timeout=60
+
+#PikPakPremium
+PikPakPremium = type=http-response, pattern=^https:\/\/api-drive\.mypikpak\.com\/(vip\/v\d\/(vip\/info|allSubscriptionStatus)|drive\/v\d\/about\?space), script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/PikPakPremium.js, requires-body=true, max-size=-1, timeout=60
+
+#Github
+Github = type=http-response, pattern=https://api.github.com/graphql, script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/Github.js, requires-body=true, max-size=-1, timeout=60
+
+#Drafts解锁会员 hostname = backend.getdrafts.com
+Drafts=type=http-response,pattern=^https:\/\/backend\.getdrafts\.com\/api\/v1\/verification\/verify_receipt,requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Drafts.js
+
+#Polarr hostname= api.polarr.co
+Polarr = type=http-response, pattern=^https:\/\/api\.polarr\.co\/v1\/payments\/(appleiap\/receipts\/confirmation|profiles\/@me\/subscription), script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Polarr.js, requires-body=true, max-size=-1, timeout=60
+
+# >计步器 StepsApp（恢复购买）
+#StepsApp = type=http-response, pattern=^https?:\/\/api.revenuecat.com\/v1\/(receipts|subscribers).*$, script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/stepsapp.js, requires-body=true, max-size=-1, timeout=60
+
+# > Riza, Fomz Pro mitm = *api.imendon.com
+rzxj = type=http-response, pattern=^https?:\/\/(rzres86|fz68res)api.imendon.com\/v2\/(user\/profile|purchase\/vip\/verification).*$, script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/rzxj.js, requires-body=true, max-size=-1, timeout=60
+
+#Owlfiles+Unlock VIP hostname = www.skyjos.com:58080
+Owlfiles = type=http-response, pattern=^https:\/\/www\.skyjos\.com:58080\/ws\/loadaccountinfo, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/mtywj.js, requires-body=true, max-size=-1, timeout=60
+
+#Calendars 日历/计划 hostname = license.pdfexpert.com
+calendars = type=http-response, pattern=^https?:\/\/license\.pdfexpert\.com\/api\/.+\/calendarslite\/subscription\/refresh, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/calendars.js, requires-body=true, max-size=-1, timeout=60
+
+#Carrot hostname = carrotweather.herokuapp.com
+Carrot = type=http-response, pattern=https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId, script-path=https://apptesters.org/egern/Carrot.js, requires-body=true, max-size=-1, timeout=60
+
+#PicsArt hostname = api.picsart.com
+PicsArt = type=http-request, pattern=https://api.picsart.com/gw-v2/shop/subscription/apple/purchases, script-path=https://apptesters.org/egern/PicsArt.js, requires-body=true, max-size=-1, timeout=60
+
+#ToonMe卡通头像 hostname = purchases.ws.pho.to
+ToonMe = type=http-response,pattern=^https?:\/\/purchases\.ws\.pho\.to\/api\/v2\/apple\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/ToonMe.js
+
+#AccuWeather解锁会员 hostname = app-subscription-proxy.accuweather.com
+AccuWeather=type=http-response,pattern=https://app-subscription-proxy.accuweather.com/subscriptions/v1/apple/validate,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/accuWeather.js,requires-body=1,max-size=0
+
+#SuperAppLock hostname = api.safeapp.studio
+super = type=http-response, pattern=^https:\/\/api\.safeapp\.studio\/super-app-lock\/member\/info, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/super.js, requires-body=true, max-size=-1, timeout=60
+
+#iLove PDF hostname = service.ilovepdf.com
+ilovePDF = type=http-response, pattern=^https?:\/\/service\.ilovepdf\.com\/.+\/user, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/ilove.js, requires-body=true, max-size=-1, timeout=60
+
+#Handy hostname = parseapi.handyapp.*
+Handy = type=http-response, pattern=^https:\/\/parseapi\.handyapp\.(cn|io)\/parse\/classes\/(Theme|Discover|ExploreBanner|StandbyPromote), script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Handy.js, requires-body=true, max-size=-1, timeout=60
+
+#Felo实时翻译 hostname = translator.felo.me, accounts.felo.me
+felo = type=http-response, pattern=^https?:\/\/(translator|accounts).felo.me\/api\/user.*$, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/felo.js, requires-body=true, max-size=-1, timeout=60
+felock = type=http-request, pattern=^https?:\/\/translator.felo.me\/api\/translation\/thirdToken, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/felock.js, timeout=60
+
+#!⚠️【AppTesters.org】
+#AppFMTesters
+Facemoji = type=http-response, pattern=https://order.creativeappnow.com/iap/receipt, script-path=https://apptesters.org/egern/Facemoji.js, requires-body=true, max-size=-1, timeout=60
+
+#AppReTesters
+#Readdle = type=http-response, pattern=https:\/\/license\.pdfexpert\.com\/api\/2\.0\/(calendarslite|pdfexpert6|documents)\/subscription\/(refresh|check), script-path=https://apptesters.org/egern/readdle.js, requires-body=true, max-size=-1, timeout=60
+
+#AppMuTesters
+MuslimPro = type=http-response, pattern=us-central1-muslim-pro-app.cloudfunctions.net/GetUserPremiumInfo, script-path=https://apptesters.org/egern/MuslimPro.js, requires-body=true, max-size=-1, timeout=60
+
+#AppGrTesters
+Grammarly = type=http-response, pattern=^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$, script-path=https://apptesters.org/egern/Grammarly.js, requires-body=true, max-size=-1, timeout=60
+
+#AppeSTesters
+eSound = type=http-response, pattern=api.esound.app/account, script-path=https://apptesters.org/egern/eSound.js, requires-body=true, max-size=-1, timeout=60
+
+#AppPurTesters
+Purchasely = type=http-response, pattern=https://api.purchasely.io/paab/user_purchases, script-path=https://apptesters.org/egern/purchasely.js, requires-body=true, max-size=-1, timeout=60
+
+#AppVaTesters
+Vaia = type=http-response, pattern=prod.studysmarter.de/payments/info, script-path=https://apptesters.org/egern/Vaia.js, requires-body=true, max-size=-1, timeout=60
+
+#AppQOTesters
+qonversion = type=http-response, pattern=api.qonversion.io/v1/user/init, script-path=https://apptesters.org/egern/qonversion.js, requires-body=true, max-size=-1, timeout=60
+
+#AppDJTesters
+edjingMix = type=http-response, pattern=https://api.mwm-users.com/me/features, script-path=https://apptesters.org/egern/edjingMix.js, requires-body=true, max-size=-1, timeout=60
+
+#AppVCTesters
+VivaCut = type=http-response, pattern=https://api-fra.vivacut.com/api/rest/commerce/integrate/vip/perform, script-path=https://apptesters.org/egern/VivaCut.js, requires-body=true, max-size=-1, timeout=60
+
+#AppKineTesters
+KineMaster = type=http-response, pattern=https://api-account.kinemasters.com/v2/user/subscribe, script-path=https://apptesters.org/egern/KineMaster.js, requires-body=true, max-size=-1, timeout=60
+
+#AppAMTesters hostname = us-central1-alight-creative.cloudfunctions.net
+#AlightMotion = type=http-response, pattern=https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses, script-path=https://apptesters.org/egern/AlightMotion.js, requires-body=true, max-size=-1, timeout=60
+
+#LengZz
+AlightMotion = type=http-response, pattern=^https:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses, script-path= https://raw.githubusercontent.com/lengzziosofficialscript/scriptvipshadowrocket/main/AlighMotionScript.json, requires-body=true, max-size=-1, timeout=60
+
+#AppSaTesters
+SandBox = type=http-response, pattern=api.sandbox.love/accounts/current, script-path=https://apptesters.org/egern/SandBox.js, requires-body=true, max-size=-1, timeout=60
+
+#AppSSesters
+SongShift = type=http-response, pattern=subscriptions.songshift.com/validate, script-path=https://apptesters.org/egern/SongShift.js, requires-body=true, max-size=-1, timeout=60
+
+#AppADBTesters
+AdblockPro = type=http-response, pattern=api.adblockpro.app/verify, script-path=https://apptesters.org/egern/AdblockPro.js, requires-body=true, max-size=-1, timeout=60
+
+#AppADGTesters
+AdGuardPro = type=http-response, pattern=^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?), script-path=https://apptesters.org/egern/AdGuardPro.js, requires-body=true, max-size=-1, timeout=60
+
+#AppDTesters
+URL2Script = type=http-response, pattern=ILoveDevTheDev.com, script-path=https://URL2Script.com, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com, rc.visionarytech.ltd, appraven.net, api.github.com, *.mypikpak.com, nicegram.cloud, api.imem.app, *.apphud.com, *.tencentcs.com, settings.itranscreen.com, api.itranscreen.com:8080, rdp.duetdisplay.com, *.snow.me, api.picsart.com, api-account.kinemasters.com, us-central1-alight-creative.cloudfunctions.net, api.adapty.io, carrotweather.herokuapp.com, order.creativeappnow.com, api.mwm-users.com, us-central1-muslim-pro-app.cloudfunctions.net, prod.studysmarter.de, api.qonversion.io, subscription.grammarly.com, api.esound.app, api.purchasely.io, api.sandbox.love, subscriptions.songshift.com, api.adblockpro.app, mobile-api.adguard.org, *api.imendon.com, *.oracle.bendingspoonsapps.com, isi.csan.goodnotes.com.*, isi.csan.goodnotes.com, backend.getdrafts.com, purchases.ws.pho.to, www.skyjos.com:58080, app-subscription-proxy.accuweather.com, api.safeapp.studio, service.ilovepdf.com, license.pdfexpert.com, api.polarr.co, parseapi.handyapp.*, translator.felo.me, accounts.felo.me

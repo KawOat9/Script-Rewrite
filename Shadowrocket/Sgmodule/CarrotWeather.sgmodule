@@ -1,0 +1,11 @@
+#!name=CARROT Weather
+#!desc=CARROT Weather Premium
+
+
+[Script]
+#Carrot hostname = carrotweather.herokuapp.com
+Carrot = type=http-response, pattern=https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId, script-path=https://apptesters.org/egern/Carrot.js, requires-body=true, max-size=-1, timeout=60
+
+
+[MITM] 
+hostname = %APPEND% carrotweather.herokuapp.com
