@@ -2,7 +2,7 @@
 <br/>
 <div align="center">
 <a href="https://github.com/KawOat9/Script-Rewrite">
-<img src="https://github.com/CanineHQ/canine/blob/main/public/images/logo-full.png?raw=true" alt="Logo" height="100">
+<img src="https://raw.githubusercontent.com/KawOat9/Script-Rewrite/refs/heads/main/Profile.png?raw=true" alt="Logo" height="100">
 </a>
 <h3 align="center">KawOat9</h3>
 <p align="center">
