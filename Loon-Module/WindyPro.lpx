@@ -1,0 +1,10 @@
+#!name=Windy.com
+#!desc=WindyProCrack
+#!openUrl = https://apps.apple.com/app/id1161387262
+#!icon=https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/App-Icon/Windy.png
+
+[Script]
+http-response ^https?:\/\/account\.windy\.com\/api\/info script-path=https://github.com/ddgksf2013/MoYu/raw/master/WindyProCrack.js, requires-body=true, timeout=60, tag=WindyProCrack
+
+[MITM]
+hostname = account.windy.com

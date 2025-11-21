@@ -7,7 +7,7 @@
 #!system_version = 
 #!loon_version = 3.3.5(904)
 #!homepage = 
-#!icon = https://raw.githubusercontent.com/KawOat9/Script-Rewrite/refs/heads/main/App-Icon/AppTesters.png
+#!icon = https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/App-Icon/AppTesters.png
 #!date = 2025-11-01 00:00
 
 [Script]
@@ -16,9 +16,6 @@ http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+
 
 #AppAdTesters
 http-response https://api.adapty.io/api/v1/sdk/analytics/profiles script-path=https://apptesters.org/egern/Adapty.js, requires-body=true, timeout=60, tag=Adapty
-
-#Adapty-系列 hostname = api.adapty.io
-http-response ^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js, requires-body=true, timeout=60, tag=adapty
 
 #AppFMTesters
 http-response https://order.creativeappnow.com/iap/receipt script-path=https://apptesters.org/egern/Facemoji.js, requires-body=true, timeout=60, tag=Facemoji
@@ -76,9 +73,6 @@ http-response api.adblockpro.app/verify script-path=https://apptesters.org/egern
 
 #AppADGTesters
 http-response ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?) script-path=https://apptesters.org/egern/AdGuardPro.js, requires-body=true, timeout=60, tag=AdGuardPro
-
-#AppDTesters
-http-response ILoveDevTheDev.com script-path=https://URL2Script.com, requires-body=true, timeout=60, tag=URL2Script
 
 [MITM]
 hostname = api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, api-account.kinemasters.com, us-central1-alight-creative.cloudfunctions.net, api.adapty.io, carrotweather.herokuapp.com, order.creativeappnow.com, api.mwm-users.com, us-central1-muslim-pro-app.cloudfunctions.net, prod.studysmarter.de, api.qonversion.io, subscription.grammarly.com, api.esound.app, api.purchasely.io, api.sandbox.love, subscriptions.songshift.com, api.adblockpro.app, mobile-api.adguard.org
