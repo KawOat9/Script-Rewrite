@@ -17,6 +17,8 @@ hostname = www.skyjos.com:58080
 *************************************/
 
 
-body = $response.body.replace(/\"memberLevel":(.*?)/g, '\"memberLevel":3').replace(/\"succ":"(.*?)"/g, '\"succ":"true"').replace(/\"dispName":"(.*?)"/g, '\"dispName":"KawOat Dev"').replace(/\"expireAt":"(.*?)"/g, '\"expireAt":"4099995295000"')
-
+var body = $response.body.replace(/\"memberLevel":(.*?)/g, '\"memberLevel":3')
+                         .replace(/\"succ":"(.*?)"/g, '\"succ":"true"')
+                         .replace(/\"dispName":"(.*?)"/g, '\"dispName":"KawOatDev"')
+                         .replace(/\"expireAt":"(.*?)"/g, '\"expireAt":"4092599349000"');
 $done({body});
