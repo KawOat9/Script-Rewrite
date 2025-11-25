@@ -19,21 +19,21 @@ hostname = www.skyjos.com:58080
 
 var objc = JSON.parse($response.body);
 objc = {
-    'accountRegistTime': 0x0,
+    'accountRegistTime': 0,
     'connectedWeixin': true,
     'externalUid': '',
-    'uid': 0x929,
-    'expireAt': 0x3ba9ac35d18,
-    'memberLevel': 0x3,
+    'uid': 2345,
+    'expireAt': 4099995295000,
+    'memberLevel': 3,
     'connectedGoogle': false,
-    'dispName': '彭于晏破解',
+    'dispName': 'KawOatDev',
     'errorMessage': '',
     'connectedApple': false,
-    'errorCode': 0x0,
+    'errorCode': 0,
     'withoutPasswd': true,
     'email': 'o1Ow468gukJcgpBU3VQbGeqMk3GU@wx',
     'succ': true,
-    'lastPasswordModifiedTime': 0x184d89acd72
+    'lastPasswordModifiedTime': 1670081334642
 };
 $done({
     'body': JSON.stringify(objc)
