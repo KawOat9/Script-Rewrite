@@ -17,8 +17,24 @@ hostname = www.skyjos.com:58080
 *************************************/
 
 
-var body = $response.body.replace(/\"memberLevel":(.*?)/g, '\"memberLevel":3')
-                         .replace(/\"succ":"(.*?)"/g, '\"succ":"true"')
-                         .replace(/\"dispName":"(.*?)"/g, '\"dispName":"KawOatDev"')
-                         .replace(/\"expireAt":"(.*?)"/g, '\"expireAt":"4092599349000"');
-$done({body});
+var objc = JSON.parse($response.body);
+objc = {
+    'accountRegistTime': 0x0,
+    'connectedWeixin': true,
+    'externalUid': '',
+    'uid': 0x929,
+    'expireAt': 0x3ba9ac35d18,
+    'memberLevel': 0x3,
+    'connectedGoogle': false,
+    'dispName': '彭于晏破解',
+    'errorMessage': '',
+    'connectedApple': false,
+    'errorCode': 0x0,
+    'withoutPasswd': true,
+    'email': 'o1Ow468gukJcgpBU3VQbGeqMk3GU@wx',
+    'succ': true,
+    'lastPasswordModifiedTime': 0x184d89acd72
+};
+$done({
+    'body': JSON.stringify(objc)
+});.toString()
