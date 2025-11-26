@@ -17,24 +17,14 @@ hostname = www.skyjos.com:58080
 *************************************/
 
 
-var objc = JSON.parse($response.body);
-objc = {
-    'accountRegistTime': 0,
-    'connectedWeixin': true,
-    'externalUid': '',
-    'uid': 2345,
-    'expireAt': 4099995295000,
-    'memberLevel': 3,
-    'connectedGoogle': false,
-    'dispName': 'KawOatDev',
-    'errorMessage': '',
-    'connectedApple': false,
-    'errorCode': 0,
-    'withoutPasswd': true,
-    'email': 'o1Ow468gukJcgpBU3VQbGeqMk3GU@wx',
-    'succ': true,
-    'lastPasswordModifiedTime': 1670081334642
-};
-$done({
-    'body': JSON.stringify(objc)
-});.toString()
+try {
+  let obj = JSON.parse($response.body);
+	
+  obj.memberLevel = 3;
+  obj.expireAt = 4094370121000;
+	
+  $done({ body: JSON.stringify(obj) });
+} catch (err) {
+  console.log("Skyjos 解锁失败: " + err);
+  $done({});
+}
