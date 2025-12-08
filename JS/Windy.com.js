@@ -25,8 +25,8 @@ response.subscriptionInfo = {
 };
 
 response.subscription = 'premium';
-response.auth = true;
 response.message = 'ok';
+response.auth = true;
 response.token = '';
 
 $done({ body: JSON.stringify(response) });
