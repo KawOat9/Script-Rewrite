@@ -17,7 +17,7 @@ let response = JSON.parse($response.body);
 response.subscriptionInfo = {
   status: 'active',
   isTrial: false,
-  platform: 'ios',
+  platform: 'apple',
   tier: 'premium',
   expiresAt: 4094370121000,
   state: 'ok',
@@ -26,5 +26,7 @@ response.subscriptionInfo = {
 
 response.subscription = 'premium';
 response.auth = true;
+response.message = 'ok';
+response.token = '';
 
 $done({ body: JSON.stringify(response) });
