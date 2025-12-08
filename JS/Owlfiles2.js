@@ -3,7 +3,7 @@
 #!name = Owlfiles2
 #!desc = Owlfiles+Unlock VIP
 #!author = @KawOatツ
-#!openUrl = https://t.cn/A6Kotbjs
+#!openUrl = https://apps.apple.com/app/owlfiles-file-manager/id510282524
 #!icon = https://raw.githubusercontent.com/deezertidal/private/main/icons/mtywj.png
 
 **************************************
