@@ -1,6 +1,6 @@
 /*
-#!name= Aloha ✨
-#!desc=浏览器
+#!name=Aloha ✨
+#!desc=Web Browsing - Module
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/aloha.png
