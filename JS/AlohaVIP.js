@@ -34,7 +34,7 @@ if (enabled) {
   let now  = Date.now();
   let last = parseInt($persistentStore.read(TS) || "0",10) || 0;
   if (last===0 || now-last>CD) {
-    notify(APP_NAME,"✅ปลดล็อคสมาชิก 🕝พรีเมียมจนถึง 08-08-2088🌟");
+    notify(APP_NAME,"✅ปลดล็อคสมาชิก, 🕝พรีเมียมจนถึง 08-08-2088🌟");
     $persistentStore.write(String(now), TS);
   }
 }
