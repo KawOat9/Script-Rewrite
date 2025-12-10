@@ -1,30 +1,9 @@
-/**********************************************
- > deleteHeader by LocketGOLD Services
- > Compatible with Shadowrocket, Surge, LanceX
- **********************************************/	
+#!name=deleteHeader ✨
+#!desc=Compatible with Shadowrocket, Surge, LanceX
+#!category=🔐APP
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹	
 
-const version = 'V1.0.2-Shadowrocket';
+const version = 'V1.0.2';
 
-/**
- * Set header value with case-insensitive handling
- * @param {object} headers - Headers object
- * @param {string} headerName - Header name
- * @param {string} headerValue - Header value
- */
-function setHeaderValue(headers, headerName, headerValue) {
-    const lowerCaseName = headerName.toLowerCase();
-    if (lowerCaseName in headers) {
-        headers[lowerCaseName] = headerValue;
-    } else {
-        headers[headerName] = headerValue;
-    }
-}
-
-// Get current request headers
-var modifiedHeaders = $request.headers;
-
-// Remove RevenueCat ETag headers for proper functionality
-setHeaderValue(modifiedHeaders, "X-RevenueCat-ETag", "");
-
-// Return modified headers
-$done({headers: modifiedHeaders});
+function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
