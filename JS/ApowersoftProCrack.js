@@ -1,19 +1,15 @@
 /***********************************
 
-> 应用名称：傲软抠图
-> 软件版本：1.7.1
-> 下载地址：https://apps.apple.com/cn/app/id1490054676
-> 脚本作者：ddgksf2013
-> 微信账号：墨鱼手记
-> 更新时间：2023-11-30
-> 通知频道：https://t.me/ddgksf2021
-> 问题反馈：https://t.me/ddgksf2013_bot
-> 特别说明：本脚本仅供学习交流使用，禁止转载售卖
+#!name=Apowersoft ✨
+#!desc=ApowersoftProCrack
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!openUrl=https://apps.apple.com/app/id1490054676
+#!category=🔐APP
  
 [rewrite_local]
 
 # ～ 傲软抠图解锁会员权限（2023-11-30）@ddgksf2013
-^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips url script-response-body https://github.com/ddgksf2013/MoYu/raw/master/ApowersoftProCrack.js
+^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/ApowersoftProCrack.js
 
 [mitm] 
 
