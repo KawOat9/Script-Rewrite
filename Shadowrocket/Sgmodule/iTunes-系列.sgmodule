@@ -1,9 +1,0 @@
-#!name=iTunes-系列
-#!desc=@chxm1023
-
-[Script]
-iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
-
-[MITM]
-hostname = %APPEND% buy.itunes.apple.com
-

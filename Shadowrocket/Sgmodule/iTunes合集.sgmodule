@@ -1,9 +1,0 @@
-#!name=iTunes合集
-#!desc=@Guding88
-
-[Script]
-iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js, requires-body=true, max-size=-1, timeout=60
-
-[MITM]
-hostname = %APPEND% buy.itunes.apple.com
-
