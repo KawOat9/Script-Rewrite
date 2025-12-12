@@ -4,11 +4,11 @@
 #!category=🔐APP
 #!system=ios
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/aloha.png
+#!icon=https://raw.githubusercontent.com/KawOat9/Scripts/main/icons/aloha.png
 #!openUrl=https://apps.apple.com/app/id1105317682
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
-^https?:\/\/api\.alohaprofile\.com\/v1\/profile_info url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/AlohaPremium.js
+^https?:\/\/api\.alohaprofile\.com\/v1\/profile_info url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/AlohaPremium.js
 
 [MITM]
 hostname = api.alohaprofile.com
