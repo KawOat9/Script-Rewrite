@@ -6,7 +6,7 @@
 #!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/aloha.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
-^https:\/\/api\.alohaprofile\.com\/v1\/profile_info url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/AlohaVIP.js
+^https:\/\/api\.alohaprofile\.com\/v1\/profile_info url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/AlohaVIP.js
 
 [MITM]
 hostname = api.alohaprofile.com

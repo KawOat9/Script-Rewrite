@@ -4,12 +4,13 @@
 #!desc=ApowersoftProCrack
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!openUrl=https://apps.apple.com/app/id1490054676
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Apowersoft.png
 #!category=🔐APP
  
 [rewrite_local]
 
 # ～ 傲软抠图解锁会员权限（2023-11-30）@ddgksf2013
-^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/ApowersoftProCrack.js
+^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/Apowersoft.js
 
 [mitm] 
 

@@ -6,7 +6,7 @@
 </a>
 <h3 align="center">KawOat9</h3>
 <p align="center">
-Welcome to my script repository.
+<strong>:high_brightness: Welcome to my script repository :crescent_moon:</strong><br>
 
 Advanced Script Converter for 📈 Surge, 🎈 Loon, 🏂 Stash, 🚀 Shadowrocket, 🌀 Quantumult X, Egern, LanceX
 

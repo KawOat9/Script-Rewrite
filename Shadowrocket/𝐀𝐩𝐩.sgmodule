@@ -154,8 +154,5 @@ AdblockPro = type=http-response, pattern=api.adblockpro.app/verify, script-path=
 #AppADGTesters
 AdGuardPro = type=http-response, pattern=^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?), script-path=https://apptesters.org/egern/AdGuardPro.js, requires-body=true, max-size=-1, timeout=60
 
-#AppDTesters
-URL2Script = type=http-response, pattern=ILoveDevTheDev.com, script-path=https://URL2Script.com, requires-body=true, max-size=-1, timeout=60
-
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com, rc.visionarytech.ltd, appraven.net, api.github.com, *.mypikpak.com, nicegram.cloud, api.imem.app, *.apphud.com, *.tencentcs.com, settings.itranscreen.com, api.itranscreen.com:8080, rdp.duetdisplay.com, *.snow.me, api.picsart.com, api-account.kinemasters.com, us-central1-alight-creative.cloudfunctions.net, api.adapty.io, carrotweather.herokuapp.com, order.creativeappnow.com, api.mwm-users.com, us-central1-muslim-pro-app.cloudfunctions.net, prod.studysmarter.de, api.qonversion.io, subscription.grammarly.com, api.esound.app, api.purchasely.io, api.sandbox.love, subscriptions.songshift.com, api.adblockpro.app, mobile-api.adguard.org, *api.imendon.com, *.oracle.bendingspoonsapps.com, isi.csan.goodnotes.com.*, isi.csan.goodnotes.com, backend.getdrafts.com, purchases.ws.pho.to, www.skyjos.com:58080, app-subscription-proxy.accuweather.com, api.safeapp.studio, service.ilovepdf.com, license.pdfexpert.com, api.polarr.co, parseapi.handyapp.*, translator.felo.me, accounts.felo.me

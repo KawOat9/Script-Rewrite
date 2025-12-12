@@ -6,4 +6,3 @@ DuetDisplay = type=http-response, pattern=https://rdp.duetdisplay.com/v1/users/v
 
 [MITM]
 hostname = %APPEND% rdp.duetdisplay.com
-

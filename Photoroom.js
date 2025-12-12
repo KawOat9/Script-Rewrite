@@ -4,8 +4,8 @@
 使用声明：️仅供学习交流, 🈲️商业用途
 ********************************
 [rewrite_local]
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$) url script-response-body https://raw.githubusercontent.com/thebestkyle323/Quantumult-x/main/photoroom.js
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$) url script-request-header https://raw.githubusercontent.com/thebestkyle323/Quantumult-x/main/photoroom.js
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$) url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/Photoroom.js
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$) url script-request-header https://raw.githubusercontent.com/KawOat9/Scripts/main/Photoroom.js
 [mitm] 
 hostname = api.revenuecat.com
 *******************************/

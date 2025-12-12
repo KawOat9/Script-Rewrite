@@ -1,0 +1,17 @@
+#!name=Owlfiles ✨
+#!desc=FTP
+#!author=🅜ⓘ🅚ⓔ🅟ⓗ🅘ⓔ
+#!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/owlfiles.png
+#!category=🔐APP
+
+[Script]
+owlfiles = type=http-response, pattern=^https?:\/\/www\.skyjos\.com(?::58080)?\/ws\/(?:validate|loadaccountinfo)\b, script-path=https://raw.githubusercontent.com/Mikephie/Script/main/qx/owlfiles.js, requires-body=true, max-size=-1, timeout=60
+
+#Owlfiles+Unlock VIP hostname = www.skyjos.com:58080
+#Owlfiles = type=http-response, pattern=^https:\/\/www\.skyjos\.com:58080\/ws\/loadaccountinfo, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/mtywj.js, requires-body=true, max-size=-1, timeout=60
+
+# chxm1023
+#Owlfiles2 = type=http-response, pattern=^https:\/\/www\.skyjos\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtywj.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *.skyjos.com:58080

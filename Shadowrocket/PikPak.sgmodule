@@ -6,4 +6,3 @@ PikPakPremium = type=http-response, pattern=^https:\/\/api-drive\.mypikpak\.com\
 
 [MITM]
 hostname = %APPEND% *.mypikpak.com
-

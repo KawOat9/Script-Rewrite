@@ -4,7 +4,7 @@
 #!category=🔐APP
 #!system=ios
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!icon=https://raw.githubusercontent.com/KawOat9/Scripts/main/icons/aloha.png
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Aloha.png
 #!openUrl=https://apps.apple.com/app/id1105317682
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]

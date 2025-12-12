@@ -1,0 +1,8 @@
+#!name=Windy.com
+#!desc=WindyProCrack
+
+[Script]
+WindyProCrack = type=http-response, pattern=^https?:\/\/account\.windy\.com\/api\/info, script-path=https://github.com/ddgksf2013/MoYu/raw/master/WindyProCrack.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% account.windy.com

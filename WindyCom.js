@@ -3,10 +3,10 @@
 #!desc=解锁本地VIP
 #!category=🔐APP
 #!author=KawOat
-#!icon=https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/App-Icon/Windy.png
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Windy.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
-^https?:\/\/account\.windy\.com\/api\/info url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/Windy.com.js
+^https?:\/\/account\.windy\.com\/api\/info url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/WindyCom.js
 
 [mitm]
 hostname = account.windy.com

@@ -12,8 +12,8 @@ https://appraven.net/collection/77299969
 [rewrite_local]
 
 # ～ RevenuecatVip ✨ (っ◔◡◔)っ ♥ KawOat ♥
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/RevenuecatVip.js
-^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/deleteHeader.js
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/RevenuecatVip.js
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeader.js
 
 [mitm]
 

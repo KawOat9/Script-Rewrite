@@ -3,10 +3,10 @@
 #!desc=FTP
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/owlfiles.png
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Owlfiles.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
-^https?:\/\/www\.skyjos\.com(?::58080)?\/ws\/(?:validate|loadaccountinfo)\b url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/Owlfiles.js
+^https?:\/\/www\.skyjos\.com(?::58080)?\/ws\/(?:validate|loadaccountinfo)\b url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/Owlfiles.js
 
 [mitm]
 hostname = *.skyjos.com:58080

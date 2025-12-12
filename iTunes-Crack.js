@@ -4,7 +4,7 @@ Project Name: iTunes Series Unlock Collection
 Update Date: 2025-10-24
 Script Author: @ddm1023 @KawOat9
 #!openUrl = https://github.com/KawOat9/Script-Rewrite
-#!icon = https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/App-Icon/iTunesStore.png
+#!icon = https://raw.githubusercontent.com/KawOat9/icons/main/iTunesStore.png
 Telegram Channel: https://t.me/ddm1023
 Usage Statement: ⚠️For reference only, 🈲reproduction and sale prohibited!
 Instructions for Use: If the script is ineffective, please first check for script conflicts.
@@ -14,7 +14,7 @@ Solution: Choose one of the following methods: [MITM][Script][Proxy Tool]
 **************************************
 
 [rewrite_local]
-^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/iTunes-Crack.js
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/iTunes-Crack.js
 
 [mitm]
 hostname = buy.itunes.apple.com

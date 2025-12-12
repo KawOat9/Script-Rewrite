@@ -4,7 +4,9 @@
 
 [Script]
 #Bazaart 解锁 Premium
-bazaart = type=http-response, pattern=https://buy.itunes.apple.com/verifyReceipt, script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/bazaart.js, requires-body=true, max-size=-1, timeout=60
+#bazaart = type=http-response, pattern=https://buy.itunes.apple.com/verifyReceipt, script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/bazaart.js, requires-body=true, max-size=-1, timeout=60
+
+Bazaart = type=http-response, pattern=https://buy.itunes.apple.com/verifyReceipt, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Bazaart.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
