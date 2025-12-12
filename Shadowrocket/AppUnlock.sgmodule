@@ -1,0 +1,148 @@
+#!url=https://raw.githubusercontent.com/lalifeier/Shadowrocket/main/modules/AppUnlock.sgmodule
+#!name=AppUnlock
+#!desc=App解锁
+#!author=@chxm1023,@RuCu6,@zwf234,@NobyDa,@app2smile,@zZPiglet,@89996462
+# 使用声明：此脚本仅供学习与交流，请勿转载与贩卖！
+
+[URL Rewrite]
+
+[Map Local]
+
+[Script]
+# ✅ BoxJS
+# hostname = boxjs.com, boxjs.net
+
+BoxJs = type=http-request, pattern=^https?:\/\/boxjs\.(com|net), script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ SUB-STORE
+# hostname = sub.store
+
+Sub-Store Core = type=http-request, pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body=true, max-size=-1, timeout=60
+Sub-Store Simple = type=http-request, pattern=^https?:\/\/sub\.store, script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ iTunes合集
+# hostname = buy.itunes.apple.com
+
+iTunes合集 = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true
+
+# iTunes合集 = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js, requires-body=true
+
+# iTunes合集 = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js, requires-body=true
+
+# ✅ Revenuecat合集
+# hostname = api.revenuecat.com
+
+Revenuecat合集 = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, max-size=-1, timeout=60
+Revenuecat清缓存 = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60
+
+# Revenuecat合集 = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true, max-size=-1, timeout=60
+# Revenuecat清缓存 = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
+
+# Revenuecat合集 = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$), script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, requires-body=true, max-size=-1, timeout=60
+# Revenuecat清缓存= type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$), script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js, timeout=60
+
+# ✅ 1Blocker
+# hostname = api.revenuecat.com
+
+# 1blocker = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/blocker.js, requires-body=true
+
+# ✅ AdGuard
+# hostname = mobile-api.adguard.org
+
+AdGuard = type=http-response, pattern=^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/AdGuard.js, requires-body=true, max-size=0
+
+# ✅ 爱企查
+# hostname = aiqicha.baidu.com
+
+# aiqicha = type=http-response, pattern=^https:\//aiqicha.baidu.com\/usercenter\/getvipinfoajax, script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/aiqicha.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Emby
+# hostname = mb3admin.com
+
+Emby = type=http-request, pattern=^https:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/embycrack.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ 百度网盘
+# hostname = pan.baidu.com
+
+bdcloud = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ 彩云天气
+# hostname = biz.caiyunapp.com, biz.cyapi.com, biz.caiyunapp.cn, biz.cyapi.cn
+
+彩云天气 = type=http-response, pattern=^http[s]?:\/\/biz\.(caiyunapp|cyapi)\.(com|cn)\/v2\/user.*$, script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/caiyun.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Photoshop Express
+# hostname = lcs-mobile-cops.adobe.io
+
+# Photoshop = type=http-response, pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Photoshop.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Adobe Lightroom
+# hostname = photos.adobe.io
+
+# lightroom = type=http-response, pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/lightroom.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ GitHub
+# AI功能不可用，其他雜項功能正常
+# hostname = api.github.com
+
+# GitHub = type=http-response, pattern=https://api.github.com/graphql, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Github.js, requires-body=true, max-size=-1, timeout=60
+
+✅ 美图秀秀
+# hostname = h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com
+
+# 美图秀秀 = type=http-response, pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/, script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/MeiTuXiuXiu.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Relens大光圈单反相机
+# hostname = buy.itunes.apple.com
+
+# Relens大光圈单反相机 = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Relens.js, requires-body=true
+
+# ✅ Spotify(>=iOS15)
+# 部分解锁premium, 音质不能设置为超高
+# hostname = spclient.wg.spotify.com
+
+spotify-json = type=http-request, pattern=^https?:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/, script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
+spotify-proto = type=http-response, pattern=^https?:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$, script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, max-size=0, script-update-interval=0
+
+# ✅ TopWidgets
+# hostname = top-widgets-api.xiaozujian.com
+
+widgets = type=http-response, pattern=^https:\/\/top-widgets-api\.xiaozujian\.com\/api\/app\/config\/userConfig, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/widgets.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Testflight区域限制+共享
+# hostname = testflight.apple.com
+
+# TestFlightAccount = type=http-request, pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ Varlens 微单相机
+# hostname = mid.zineapi.com
+
+# Varlens = type=http-response, pattern=^https:\/\/mid\.zineapi\.com\/@varlens\/api\/user\/info\/, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Varlens.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ WPS
+# hostname = *account.wps.cn, *account.wps.com
+
+WPS = type=http-response, pattern=^https?:\/\/[a-z-]*account\.wps\.c(n|om)(:\d+|)\/api\/users, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ XMind
+# hostname = www.xmind.cn, www.xmind.net
+
+xmind = type=http-response, pattern=https:\/\/www\.xmind\.cn\/\_res\/devices, script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/xmind.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ 微信100
+# hostname = weixin110.qq.com, security.wechat.com
+
+UnblockURLinWeChat = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ 养基宝
+# hostname = *.yangjibao.com
+
+# yjb = type=http-response, pattern=^https?:\/\/.*\.yangjibao\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/yjb.js, requires-body=true, max-size=-1, timeout=60
+
+# ✅ 最美证件照
+# hostname = fufei.fengyunsoft.cn
+
+zmzjz = type=http-response, pattern=^https:\/\/fufei\.fengyunsoft\.cn\/api\/client\/info, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/zmzjz.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% boxjs.com, boxjs.net, sub.store, buy.itunes.apple.com, api.revenuecat.com, mobile-api.adguard.org, mb3admin.com, pan.baidu.com, biz.caiyunapp.com, biz.cyapi.com, biz.caiyunapp.cn, biz.cyapi.cn, lcs-mobile-cops.adobe.io, photos.adobe.io, api.github.com, h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com, spclient.wg.spotify.com, top-widgets-api.xiaozujian.com, mid.zineapi.com, *account.wps.cn, *account.wps.com, www.xmind.cn, www.xmind.net, weixin110.qq.com, security.wechat.com, *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, *.yangjibao.com, fufei.fengyunsoft.cn

@@ -1,0 +1,78 @@
+#!name=AppTesters
+#!desc=Unlock Premium Features Without Cost
+#!openUrl = 
+#!author = KawOat9[https://github.com/KawOat9]
+#!tag = ปลดล็อกการเป็นสมาชิก
+#!system = iOS
+#!system_version = 
+#!loon_version = 3.3.5(904)
+#!homepage = 
+#!icon = https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/App-Icon/AppTesters.png
+#!date = 2025-11-01 00:00
+
+[Script]
+#AppRCTesters
+http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://apptesters.org/egern/AutoRC.js, requires-body=true, timeout=60, tag=AutoRC
+
+#AppAdTesters
+http-response https://api.adapty.io/api/v1/sdk/analytics/profiles script-path=https://apptesters.org/egern/Adapty.js, requires-body=true, timeout=60, tag=Adapty
+
+#AppFMTesters
+http-response https://order.creativeappnow.com/iap/receipt script-path=https://apptesters.org/egern/Facemoji.js, requires-body=true, timeout=60, tag=Facemoji
+
+#AppReTesters
+http-response https:\/\/license\.pdfexpert\.com\/api\/2\.0\/(calendarslite|pdfexpert6|documents)\/subscription\/(refresh|check) script-path=https://apptesters.org/egern/readdle.js, requires-body=true, timeout=60, tag=readdle
+
+#AppitTesters
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://apptesters.org/egern/iTunes.js, requires-body=true, timeout=60, tag=iTunes
+
+#AppMuTesters
+http-response us-central1-muslim-pro-app.cloudfunctions.net/GetUserPremiumInfo script-path=https://apptesters.org/egern/MuslimPro.js, requires-body=true, timeout=60, tag=MuslimPro
+
+#AppGrTesters
+http-response ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$ script-path=https://apptesters.org/egern/Grammarly.js, requires-body=true, timeout=60, tag=Grammarly
+
+#AppeSTesters
+http-response api.esound.app/account script-path=https://apptesters.org/egern/eSound.js, requires-body=true, timeout=60, tag=eSound
+
+#AppPurTesters
+http-response https://api.purchasely.io/paab/user_purchases script-path=https://apptesters.org/egern/purchasely.js, requires-body=true, timeout=60, tag=purchasely
+
+#AppVaTesters
+http-response prod.studysmarter.de/payments/info script-path=https://apptesters.org/egern/Vaia.js, requires-body=true, timeout=60, tag=Vaia
+
+#AppQOTesters
+http-response api.qonversion.io/v1/user/init script-path=https://apptesters.org/egern/qonversion.js, requires-body=true, timeout=60, tag=qonversion
+
+#AppDJTesters
+http-response https://api.mwm-users.com/me/features script-path=https://apptesters.org/egern/edjingMix.js, requires-body=true, timeout=60, tag=edjingMix
+
+#AppVCTesters
+http-response https://api-fra.vivacut.com/api/rest/commerce/integrate/vip/perform script-path=https://apptesters.org/egern/VivaCut.js, requires-body=true, timeout=60, tag=VivaCut
+
+#AppCaTesters
+http-response https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId script-path=https://apptesters.org/egern/Carrot.js, requires-body=true, timeout=60, tag=Carrot
+
+#AppKineTesters
+http-response https://api-account.kinemasters.com/v2/user/subscribe script-path=https://apptesters.org/egern/KineMaster.js, requires-body=true, timeout=60, tag=KineMaster
+
+#AppPicTesters
+http-request https://api.picsart.com/gw-v2/shop/subscription/apple/purchases script-path=https://apptesters.org/egern/PicsArt.js, requires-body=true, timeout=60, tag=PicsArt
+
+#AppAMTesters
+http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses script-path=https://apptesters.org/egern/AlightMotion.js, requires-body=true, timeout=60, tag=AlightMotion
+
+#AppSaTesters
+http-response api.sandbox.love/accounts/current script-path=https://apptesters.org/egern/SandBox.js, requires-body=true, timeout=60, tag=SandBox
+
+#AppSSesters
+http-response subscriptions.songshift.com/validate script-path=https://apptesters.org/egern/SongShift.js, requires-body=true, timeout=60, tag=SongShift
+
+#AppADBTesters
+http-response api.adblockpro.app/verify script-path=https://apptesters.org/egern/AdblockPro.js, requires-body=true, timeout=60, tag=AdblockPro
+
+#AppADGTesters
+http-response ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?) script-path=https://apptesters.org/egern/AdGuardPro.js, requires-body=true, timeout=60, tag=AdGuardPro
+
+[MITM]
+hostname = api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, api-account.kinemasters.com, us-central1-alight-creative.cloudfunctions.net, api.adapty.io, carrotweather.herokuapp.com, order.creativeappnow.com, api.mwm-users.com, us-central1-muslim-pro-app.cloudfunctions.net, prod.studysmarter.de, api.qonversion.io, subscription.grammarly.com, api.esound.app, api.purchasely.io, api.sandbox.love, subscriptions.songshift.com, api.adblockpro.app, mobile-api.adguard.org
