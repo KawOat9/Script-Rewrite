@@ -5,7 +5,6 @@
 #!moduleUrl=https://github.com/ddgksf2013/Modules/raw/main/Goodbility.Vip.sgmodule
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
-
 [Script]
 # > Goodbility@ddgksf2013
 Goodbility.Vip1 = type=http-response, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://ddgksf2013.top/scripts/goodbility.vip.js, requires-body=true, max-size=-1, timeout=60
@@ -13,5 +12,4 @@ Goodbility.Vip2 = type=http-request,  pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/
 Goodbility.Vip3 = type=http-response, pattern=^https?:\/\/notability\.com\/global, script-path=https://ddgksf2013.top/scripts/goodbility.vip.js, requires-body=true, max-size=-1, timeout=60
 
 [mitm]
-
 hostname=%APPEND% isi.csan.*, notability.com
