@@ -5,9 +5,7 @@
 #!category=🔐APP
 
 [Script]
-Windy.com = type=http-response, pattern=^https?:\/\/account\.windy\.com\/api\/info, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/WindyCom.js, requires-body=true, max-size=-1, timeout=60
-
-#WindyProCrack = type=http-response, pattern=^https?:\/\/account\.windy\.com\/api\/info, script-path=https://github.com/ddgksf2013/MoYu/raw/master/WindyProCrack.js, requires-body=true, max-size=-1, timeout=60
+WindyCom = type=http-response, pattern=^https?:\/\/account\.windy\.com\/api\/info, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/WindyCom.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% account.windy.com
