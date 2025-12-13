@@ -1,6 +1,6 @@
 /*
 #!name=Photoroom Ultra✨
-#!desc=Photoroom Ultra
+#!desc=Unlock Ultra
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Photoroom.png
