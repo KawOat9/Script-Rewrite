@@ -1,0 +1,13 @@
+#!name=Photoroom Ultra✨
+#!desc=Unlock Ultra
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Photoroom.png
+#!category=🔐APP
+
+[Script]
+PhotoroomUltra = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/PhotoroomUltra.js, requires-body=true, max-size=-1, timeout=60
+
+PhotoroomUltra = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/.+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/PhotoroomUltra.js, timeout=60
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
