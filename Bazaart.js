@@ -17,7 +17,7 @@ hostname = buy.itunes.apple.com
 var objc = JSON.parse($response.body);
 
 // กำหนด Product ID ใหม่เป็น "Super"
-const SUPER_PRODUCT_ID = "Bazaart_Ultra_Yearly"; 
+const SUPER_PRODUCT_ID = "Bazaart_Super_Yearly"; 
 const EXPIRATION_DATE = "2099-09-09 09:09:09 Etc/GMT";
 const EXPIRATION_MS = "4092599349000";
 
