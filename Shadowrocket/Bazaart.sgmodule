@@ -1,12 +1,11 @@
-#!name=Bazaart 解锁 Premium
-#!desc=测试版本v8.46.1
-# @Marol62926
+#!name=Bazaart ✨
+#!desc=Unlock Super
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Bazaart.png
+#!category=🔐APP
 
 [Script]
-#Bazaart 解锁 Premium
-#bazaart = type=http-response, pattern=https://buy.itunes.apple.com/verifyReceipt, script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/bazaart.js, requires-body=true, max-size=-1, timeout=60
-
-Bazaart = type=http-response, pattern=https://buy.itunes.apple.com/verifyReceipt, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Bazaart.js, requires-body=true, max-size=-1, timeout=60
+Bazaart = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/Bazaart.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
