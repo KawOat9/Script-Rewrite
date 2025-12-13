@@ -1,12 +1,12 @@
 #!name=Apowersoft ✨
 #!desc=ApowersoftProCrack
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!openUrl=https://apps.apple.com/app/id1490054676
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Apowersoft.png
 #!category=🔐APP
+#!openUrl=https://apps.apple.com/app/id1490054676
 
 [Script]
-# ～ 傲软抠图解锁会员权限（2023-11-30）@ddgksf2013
-ApowersoftProCrack = type=http-response, pattern=^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips, script-path=https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/JS/ApowersoftProCrack.js, requires-body=true, max-size=-1, timeout=60
+Apowersoft = type=http-response, pattern=^https?:\/\/.*aoscdn\.com\/base\/vip\/v\d\/vips, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/Apowersoft.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% *.aoscdn.com
