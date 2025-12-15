@@ -15,63 +15,43 @@ hostname=*.aoscdn.com
 
 ***********************************/
 
-//🔔 通知模块（含失败日志显示，不干扰原脚本）
-(function() {
-    const A = "✨🖼️Apowersoft✨",
-        M_OK = "หมดอายุ: 2099-08-08",
-        M_ERR = "❌ ปลดล็อคล้มเหลว",
-        EN = true,
-        CD = 10,
-        K = "n_" + A.replace(/[^\w]/g, "").toLowerCase() + "_t",
-        P = typeof $prefs !== "undefined",
-        S = typeof $persistentStore !== "undefined";
+// 🔔 ส่วนที่ 1: ระบบแจ้งเตือน (Notification)
+(function(){
+    const APP_NAME = "✨ Apowersoft ✨";
+    const MSG_SUCCESS = "✅ ปลดล็อคสำเร็จ! หมดอายุ: 2099-08-08";
+    const MSG_FAIL = "❌ ปลดล็อคล้มเหลว";
+    const ENABLE_NOTIFY = true;
+    const COOLDOWN = 10; // แจ้งเตือนทุก 10 นาที
+    const KEY = "n_" + APP_NAME.replace(/[^\w]/g,"").toLowerCase() + "_t";
+    const P = typeof $prefs !== "undefined";
+    const S = typeof $persistentStore !== "undefined";
 
-    function r(k) {
+    function read(k) { try { if(P) return $prefs.valueForKey(k); if(S) return $persistentStore.read(k); } catch(e){} return null; }
+    function write(k, v) { try { if(P) return $prefs.setValueForKey(String(v), k); if(S) return $persistentStore.write(String(v), k); } catch(e){} }
+    function canNotify() { let t = parseInt(read(KEY)||"0", 10)||0; return COOLDOWN===0 || Date.now()-t > COOLDOWN*60000; }
+    function markTime() { write(KEY, Date.now()); }
+    function send(title, msg) {
+        console.log(`[${title}] ${msg}`);
+        if(!ENABLE_NOTIFY) return;
         try {
-            if (P) return $prefs.valueForKey(k);
-            if (S) return $persistentStore.read(k);
-        } catch (e) {}
-        return null
+            if(typeof $notify === "function") $notify(title, "", msg);
+            else if(typeof $notification !== "undefined" && $notification.post) $notification.post(title, "", msg);
+        } catch(e) { console.log("[NotifyErr]", e); }
     }
 
-    function w(k, v) {
-        try {
-            if (P) return $prefs.setValueForKey(String(v), k);
-            if (S) return $persistentStore.write(String(v), k);
-        } catch (e) {}
-    }
-
-    function can() {
-        let t = parseInt(r(K) || "0", 10) || 0;
-        return CD === 0 || Date.now() - t > CD * 6e4
-    }
-
-    function mark() {
-        w(K, Date.now())
-    }
-
-    function send(sub, msg) {
-        console.log(`[${A}] ${sub} | ${msg}`);
-        if (!EN) return;
-        try {
-            if (typeof $notify === "function") $notify(A, sub, msg);
-            else if (typeof $notification !== "undefined" && $notification.post) $notification.post(A, sub, msg);
-        } catch (e) {
-            console.log("[NotifyErr]", e)
-        }
-    }
     try {
         if ($response && $response.body) {
-            if (can()) {
-                send("✅ ปลดล็อคสำเร็จ!", M_OK);
-                mark()
-            } else console.log(`[${A}] ⏳ 冷却中(${CD}min)`)
+            if (canNotify()) {
+                send(APP_NAME, MSG_SUCCESS);
+                markTime();
+            } else {
+                console.log(`[${APP_NAME}] ⏳ Cooldown (${COOLDOWN}min)`);
+            }
         } else {
-            send("⚠️ ตรวจไม่พบ Response Body")
+            send(APP_NAME, "⚠️ ตรวจไม่พบ Response Body");
         }
     } catch (err) {
-        send(M_ERR, String(err));
-        console.log(`[${A}] ❌ ${err}`)
+        send(APP_NAME, MSG_FAIL + " " + err);
     }
 })();
 
