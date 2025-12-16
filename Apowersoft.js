@@ -17,7 +17,7 @@ hostname=*.aoscdn.com
 
 //🔔 通知模块（含失败日志显示，不干扰原脚本）
 (function() {
-    const A = "✨🖼️Apowersoft✨",
+    const A = "✨Apowersoft✨",
         M_OK = "หมดอายุ: 2099-08-08",
         M_ERR = "❌ ปลดล็อคล้มเหลว",
         EN = true,
@@ -60,7 +60,7 @@ hostname=*.aoscdn.com
             if (can()) {
                 send("✅ ปลดล็อคสำเร็จ!", M_OK);
                 mark()
-            } else console.log(`[${A}] ⏳ 冷却中(${CD}min)`)
+            } else console.log(`[${A}] ⏳ Cooldown(${CD}min)`)
         } else {
             send("⚠️ ตรวจไม่พบ Response Body")
         }
