@@ -10,6 +10,7 @@
 // @grant        none
 // @run-at       document-start
 // @icon         https://raw.githubusercontent.com/KawOat9/icons/main/scripthub.png
+// @updateURL    https://raw.githubusercontent.com/KawOat9/Scripts/main/Userscripts/github_rawlink_opener.user.js
 // ==/UserScript==
 (function () {
   "use strict";
