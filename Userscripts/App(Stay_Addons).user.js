@@ -10,7 +10,7 @@
 // @match        *://greasyfork.org/*/scripts/*
 // @match        *://sleazyfork.org/*/scripts/*
 // @icon         https://raw.githubusercontent.com/KawOat9/icons/main/addons_scripts.png
-// @updateURL    https://raw.githubusercontent.com/KawOat9/Scripts/main/Userscripts/App(Stay%26Addons).user.js
+// @updateURL    https://raw.githubusercontent.com/KawOat9/Scripts/main/Userscripts/App(Stay_Addons).user.js
 // @grant        none
 // ==/UserScript==
 (function() {
