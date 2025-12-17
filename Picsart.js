@@ -1,25 +1,27 @@
 /******************************
 
-#!name=CARROTWeathe ✨
-#!desc=Unlock Premium Family
+#!name=Picsart ✨
+#!desc=Unlock Picsart Gold
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!openUrl=https://apps.apple.com/app/id961390574
-#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Carrot.png
+#!openUrl=https://apps.apple.com/app/id587366035
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Picsart.png
 #!category=🔐APP
 
 *******************************
 
 [rewrite_local]
-https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/Carrot.js
 
-[mitm]
-hostname = carrotweather.herokuapp.com
+https://api.picsart.com/gw-v2/shop/subscription/apple/purchases url script-required-body https://raw.githubusercontent.com/KawOat9/Scripts/main/Picsart.js
+
+
+[mitm] 
+hostname = api.picsart.com
 
 *******************************/
 
 // 🔔 ส่วนที่ 1: ระบบแจ้งเตือน (Notification)
 (function(){
-    const APP_NAME = "✨ 🌤️ CARROT Weathe ✨";
+    const APP_NAME = "✨ Picsart Gold ✨";
     const MSG_SUCCESS = "✅ ปลดล็อคสำเร็จ! หมดอายุ: 2099-08-08";
     const MSG_FAIL = "❌ ปลดล็อคล้มเหลว";
     const ENABLE_NOTIFY = true;
@@ -58,57 +60,40 @@ hostname = carrotweather.herokuapp.com
 })();
 
 // 🔔 ส่วนที่ 2: สคริปต์ปลดล็อก (Unlock Script)
-var body = $response.body;
-var obj = JSON.parse(body);
-
-obj = {
-    "result": {
-      "serverDate": {
-        "__type": "Date",
-        "iso": "2024-03-08T08:16:11.477Z"
+let objc = {
+  "status" : "success",
+  "response" : [
+    {
+      "is_eligible_for_grant" : true,
+      "limitation" : {
+        "max_count" : 10,
+        "limits_exceeded" : false
       },
-      "subscriptions": [
-        {
-          "userId": "6FFEA015-FEDE-440A-B669-0D45AFCF9478",
-          "orderId": "30001933369528",
-          "packageName": "com.grailr.CARROTweather",
-          "appPurchaseTime": "1701601075000",
-          "appStartingVersion": "5.12.9.0",
-          "receipt": "MIT",
-          "productId": "com.grailr.carrotWeather.premiumFamily1year",
-          "purchaseTime": 1708674480000,
-          "originalPurchaseTime": 1708674481000,
-          "expirationTime": "1771852680000",
-          "in_app_ownership_type": "PURCHASED",
-          "expirationReason": null,
-          "isInBillingRetryPeriod": null,
-          "autoRenewStatus": 0,
-          "cancellationDate": null,
-          "cancellationReason": null,
-          "priceConsentStatus": null,
-          "gracePeriodExpiresTime": null,
-          "isTrialPeriod": null,
-          "status": 0,
-          "service": "apple",
-          "environment": "Production",
-          "createdAt": "2024-02-23T07:48:07.554Z",
-          "updatedAt": "2025-02-08T07:24:51.399Z",
-          "deviceId": [
-            "WfjT0vx1hx",
-            "pPsiN1AKdt"
-          ],
-          "lastNotification": "DID_CHANGE_RENEWAL_STATUS",
-          "lastNotificationDate": {
-            "__type": "Date",
-            "iso": "2025-02-24T11:47:39.182Z"
-          },
-          "objectId": "m5JpZFig4u",
-          "__type": "Object",
-          "className": "Subscription"
-        }
-      ]
+      "expire_date" : 4093902846000,
+      "order_id" : "160001326559771",
+      "purchase_date" : 1663982350000,
+      "original_order_id" : "160001326559771",
+      "reason" : "ok",
+      "is_eligible_for_introductory" : false,
+      "subscription_id" : "com.picsart.studio.subscription_plus_yearly",
+      "is_trial" : false,
+      "status" : "SUBSCRIPTION_PURCHASED",
+      "plan_meta" : {
+        "product_id" : "subscription_plus_yearly",
+        "frequency" : "yearly",
+        "scope_id" : "full",
+        "id" : "com.picsart.studio.subscription_plus_yearly",
+        "storage_limit_in_mb" : 5120,
+        "level" : 1500,
+        "type" : "renewable",
+        "description" : "plus",
+        "tier_id" : "gold_old",
+        "permissions" : [
+          "premium_tools_standard",
+          "premium_tools_ai"
+        ]
+      }
     }
-  };
-
-body = JSON.stringify(obj);
-$done({body});
+  ]
+}
+$done({ response: {body: JSON.stringify(objc),status: 200} });
