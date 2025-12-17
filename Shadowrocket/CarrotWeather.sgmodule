@@ -1,12 +1,12 @@
-#!name=CARROT Weather
-#!desc=CARROT Weather Premium
-
-[URL Rewrite]
-#https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId https://apptesters.org/egern/Carrot.js header
+#!name=CARROTWeathe ✨
+#!desc=Unlock Premium Family
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Carrot.png
+#!category=🔐APP
+#!openUrl=https://apps.apple.com/app/id961390574
 
 [Script]
-#Carrot hostname = carrotweather.herokuapp.com
-Carrot = type=http-response, pattern=https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId, script-path=https://apptesters.org/egern/Carrot.js, requires-body=true, max-size=-1, timeout=60
+Carrot = type=http-response, pattern=https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/Carrot.js, requires-body=true, max-size=-1, timeout=60
 
-[MITM] 
+[MITM]
 hostname = %APPEND% carrotweather.herokuapp.com
