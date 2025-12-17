@@ -34,7 +34,7 @@ try {
     obj.profile.has_active_paid_subscription = true; // สำคัญ! ต้องแก้ตรงนี้ด้วย
     
     // 2. ตั้งเวลาหมดอายุไปไกลๆ (ปี 2099)
-    obj.profile.end_of_premium = 4092599349;
+    obj.profile.end_of_premium = 4092602949;
     obj.profile._end_of_premium = "2099-09-09 09:09:09.000";
     
     // 3. ปรับแต่งข้อมูลส่วนตัว
