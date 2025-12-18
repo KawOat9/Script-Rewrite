@@ -1,14 +1,14 @@
 /*
-#!name=iTunesEgern2 ✨
+#!name=iTunes Receipt ✨
 #!desc=Unlock Collection 
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/iTunesStore.png
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/receipt-apple.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
 
 # iTunes Receipt
-^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/iTunesEgern2.js
+^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/iTunesReceipt.js
 
 [mitm]
 hostname = buy.itunes.apple.com
@@ -16,7 +16,7 @@ hostname = buy.itunes.apple.com
 
 // 🔔 ส่วนจัดการแจ้งเตือน (Notification Module)
 (function(){
-    const APP_NAME = "✨ iTunes Egern Unlock ✨";
+    const APP_NAME = "✨ iTunes Receipt Unlock ✨";
     const EXP_DATE = "2999-09-09"; // 🗓️ โชว์ในแจ้งเตือน
     const ENABLE_NOTIFY = true;
     const COOLDOWN = 10; // นาที
