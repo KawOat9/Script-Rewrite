@@ -3,7 +3,7 @@
 #!desc=Unlock Collection 
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!icon=
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/iTunesStore.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
 
