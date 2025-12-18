@@ -1,5 +1,5 @@
 /*
-#!name=iTunesEgern ✨
+#!name=iTunesEgern2 ✨
 #!desc=Unlock Collection 
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
