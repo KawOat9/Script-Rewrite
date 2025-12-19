@@ -6,7 +6,7 @@
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
 [Script]
-# ～ RevenueCat@ddgksf2013
+# ～ BuyiTunes@ddgksf2013
 BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
 
 # ～ RevenueCat@ddgksf2013
