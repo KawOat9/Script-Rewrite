@@ -1,10 +1,5 @@
 /**************************
- *  * @Author: XiaoMao
- * @LastMod: 2023-10-19
- *
- * 
-
-
+ 
 #!name=Alarmy ✨
 #!desc=UnlockVIP
 #!category=🔐APP
