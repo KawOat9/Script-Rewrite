@@ -1,5 +1,5 @@
-#!name=自动策略
-#!desc=根据当前网络自动切换模式
+#!name=Automatic Policy
+#!desc=Based on the current network automatic switching mode
 #!author=Peng-YM
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WiFi.png
 
