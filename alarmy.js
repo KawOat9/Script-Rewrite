@@ -5,10 +5,11 @@
  * 
 
 
-\a\l\a\r\m\y\ \1\9\9\年\高\级\订\阅\
-
-
-仅供学习参考，请于下载后24小时内删除
+#!name=Alarmy ✨
+#!desc=UnlockVIP
+#!category=🔐APP
+#!system=ios
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 
 ********************************
 

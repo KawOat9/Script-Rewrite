@@ -1,9 +1,9 @@
 /*        
-        ➪：𝐀𝐥𝐚𝐫𝐦𝐲
-
-        ★：解锁永久🆅🅸🅿
-
-        𖣘： @𝙍𝙣𝙞𝙠➏➏➏
+#!name=Alarmy 2 ✨
+#!desc=UnlockVIP
+#!category=🔐APP
+#!system=ios
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 
