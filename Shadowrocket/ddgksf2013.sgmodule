@@ -1,9 +1,8 @@
 #!name=𝐢𝐓𝐮𝐧𝐞𝐬&𝐑𝐞𝐯𝐞𝐧𝐮𝐞𝐂𝐚𝐭 ✨
 #!desc=@𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
+#!author=🅜ⓘ🅚ⓔ🅟ⓗ🅘ⓔ
 #!unlockapplist=https://appraven.net/collection/77331175
-#!author=𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
-#!tgchannel=
-#!moduleUrl=
+#!icon=https://avatars.githubusercontent.com/u/116851128?v=4
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
 [Script]
@@ -12,6 +11,7 @@ BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/
 
 # ～ RevenueCat@ddgksf2013
 RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
+
 RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeader.js, timeout=60
 
 [MITM]
