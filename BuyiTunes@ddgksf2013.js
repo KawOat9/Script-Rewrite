@@ -20,7 +20,7 @@ https://appraven.net/collection/77331175
 [rewrite_local]
 
 # ～ BuyiTunes@ddgksf2013
-^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://ddgksf2013.top/scripts/buyitunes.vip.js
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js
 
 [mitm]
 
