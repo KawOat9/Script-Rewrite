@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/Mikephie/icons/main/loon/mtxx.png
 
 [Script]
-http-response ^https?://(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) script-path=https://raw.githubusercontent.com/Mikephie/Script/main/qx/mtxx.js, requires-body=true, timeout=60, tag=mtxx
+http-response ^https?://(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/mtxx.js, requires-body=true, timeout=60, tag=mtxx
 
 [MITM]
 hostname = api.xiuxiu.meitu.com
