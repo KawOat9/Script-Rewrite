@@ -15,6 +15,8 @@ hostname = %APPEND% api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, a
 # --- RevenueCat General ---
 iSteal_RC = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=1,script-path=https://N9dev-dev.github.io/SL/scripts/ARC.js
 
+RC_ETag_Cleaner = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts),script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js
+
 # --- Specific Apps ---
 Adapty = type=http-response,pattern=https://api.adapty.io/api/v1/sdk/analytics/profiles,requires-body=1,script-path=https://N9dev-dev.github.io/SL/scripts/ADPTY.js
 
