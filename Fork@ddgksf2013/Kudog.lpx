@@ -1,0 +1,38 @@
+#!name=酷狗音乐 𝕏
+#!desc=对 酷狗音乐 深度学习探索;
+#!openUrl=https://apps.apple.com/app/id472208016
+#!author=
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/3c/bf/c83cbf9f-7301-b7b0-c71e-3f15ad1da020/Placeholder.mill/400x400bb.webp
+#!date = 2025-12-00 00:00:00
+
+[Argument]
+VIP = switch,false,true,tag=开启[会员],desc=关闭开关将不对此选项生效
+Demo= input, "我的 ==> 点击 会员中心", tag = 温馨提示（失效）, desc = 仅说明无实际用途
+
+[Rule]
+URL-REGEX,"^https:\/\/vipssr\.kugou\.com\/static\/js\/async\/flexPayPopup",REJECT
+URL-REGEX,"^https:\/\/gateway\.kugou\.com\/vipssr\/prepay_ios\.html",REJECT
+URL-REGEX,"^https:\/\/staticssl\.kugou\.com\/common\/js-lib\/vip\/dlg_ctrler_v2\.js$",REJECT
+URL-REGEX,"^https:\/\/h5\.kugou\.com\/apps\/vipcenter\/_next\/static\/css",REJECT
+URL-REGEX,"^https:\/\/vipssr\.kugou\.com\/static\/js\/vip\/newUi\/vipPageUnionIosContent-",REJECT
+URL-REGEX,"^https:\/\/fx\.service\.kugou\.com\/fx\/activity\/register\/center\/sidebar\/configV2$",REJECT
+URL-REGEX,"^https:\/\/service1\.fanxing\.kugou\.com\/video\/mo\/live\/pull\/mutiline\/cfg",REJECT
+URL-REGEX,"^http:\/\/log\.web\.kugou\.com\/postEvent\.php$",REJECT
+
+DOMAIN,webvoobssdl.kugou.com,REJECT
+DOMAIN,ad.tencentmusic.com,REJECT
+DOMAIN,ads.service.kugou.com,REJECT
+DOMAIN,adsfile.kugou.com,REJECT
+DOMAIN,mdpfilebssdlbig.kugou.com,REJECT
+DOMAIN,adserviceretry.kugou.com,REJECT
+
+IP-CIDR,157.255.11.247/32,REJECT,no-resolve
+IP-CIDR,111.206.99.202/32,REJECT,no-resolve
+
+[Script]
+http-response ^https?:\/\/(m|gateway(retry)?|gateway3|loginservice|expendablekmrcdnretry|ads\.service)\.kugou\.com\/(v5\/login_by_token|v2\/get_login_extend_info|mobile\/vipinfoV2|v2\/get_vip_config|updateservice\/v1\/get_dev_user|v1\/login_by_quick_token|flow\/user_config\/get_level_config_ios|promotionvip\/v3\/vip_level\/detail|v1\/get_res_privilege\/lite|v1\/union\/audio_info|ads\.gateway\/v2\/task_center_entrance|ocean\/v6\/theme\/category|tools\.mobile\/v2\/theme\/info|ssr\/decocenter\/home|ads\.gateway\/v2\/sidebar_link|ads\.gateway\/v2\/sidebar_top_card|ads\.gateway\/v2\/home_card|ads\.gateway\/v2\/mobile_link|card\/v1\/pxy\/top|card\/v1\/pxy\/recommend_stream(_v2)?|playerpxy\/v1\/combo\/play_page_index|adp\/ad\/v1\/playpage_combine|els\.abt\/v1\/tmeab|searchnofocus\/v1\/search_no_focus_word|ads\.gateway\/v4\/search_banner|card\/v1\/pxy\/listen|ads\.gateway\/v5\/task_video\/qualification|adp\/ad\/v1\/mine_top_banner|v1\/starlight\/get_campaign_infos|pendant\/v2\/get_user_pendant|v1\/blindbox_cabinet\/client_cabinet|v4\/mobile_splash(_sort)?|pxy\/v1\/combo\/startup|v3\/vip_center) script-path=https://he2o.vercel.app/Resource/Script/Ad/kgres.js, requires-body=true, tag=播放, enable={VIP}
+http-response ^https?:\/\/gateway\.kugou\.com\/tracker\/v5\/url script-path=https://he2o.vercel.app/Resource/Script/kgres.js, requires-body=true, tag=播放v5, enable={VIP}
+http-response ^https?:\/\/(nacsing\.kugou\.com|acsing\.service\.kugou\.com|vipos\.kugou\.com|gateway\.kugou\.com|gamecenter\.kugou\.com|acsing\.tx\.kugou\.com)\/(sing7\/json\/v2\/user\/login|ccktv\/v1\/ktv_room\/room\/room_config|fxsing\/vip\/member\/info|sing7\/homepage\/json\/v3\/vip\/tip|v4\/price\/get_tips|vipenergy\/v2\/entrance\/vip_center_user_info|fxsing\/vip\/user\/info|sing7\/homepage\/json\/v3\/cdn\/kroom_tab_enter|v1\/home\/member_game|sing7\/homepage\/json\/v3\/cdn\/kroom_tab\/banners) script-path=https://he2o.vercel.app/Resource/Script/kgres_sing.js, requires-body=true, tag=K歌, enable={VIP}
+
+[Mitm]
+hostname = *.kugou.com, *.*.kugou.com
