@@ -1,8 +1,8 @@
-#!name=K̶a̶w̶O̶a̶t̶(Rocket)自用合集🔐APP
+#!name=K̶a̶w̶O̶a̶t̶(Rocket)Collection🔐APP
 #!desc=Collections Unlock - Module
 #!author = 🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!category=🔐APP
-#!icon = https://raw.githubusercontent.com/Mikephie/icons/main/loon/heji.gif
+#!icon = https://raw.githubusercontent.com/KawOat9/icons/main/RevenueCatKit.png
 
 [Script]
 # 1. ปลดล็อกเฉพาะแอป (StepsApp) - วางไว้บนสุดเพื่อให้ทำงานก่อน
@@ -15,5 +15,10 @@ Universal_RC_Unlock = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-
 # 3. ลบ ETag เพื่อป้องกันการจำค่าเดิม (ใช้สคริปต์ที่คุณมี)
 RC_ETag_Cleaner = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts),script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js
 
+Bazaart = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/Bazaart.js, requires-body=true, max-size=-1, timeout=60
+
+# ～ BuyiTunes (Universal iTunes)
+BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
+
 [MITM]
-hostname = %APPEND% api.revenuecat.com, api.rc-backup.com
+hostname = %APPEND% buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com
