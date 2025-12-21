@@ -1,0 +1,15 @@
+#!name = StepsApp ✨
+#!desc = StepsApp (Restore Purchases)
+#!author = 🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!category=🔐APP
+#!icon = https://raw.githubusercontent.com/KawOat9/icons/main/StepsApp.png
+
+[Script]
+# 1. ปลดล็อกเฉพาะแอป (StepsApp) - วางไว้บนสุดเพื่อให้ทำงานก่อน
+StepsApp_Unlock = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers)\/(?!(.*\/)),requires-body=1,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/StepsApp.js
+
+# 2. ลบ ETag เพื่อป้องกันการจำค่าเดิม (ใช้สคริปต์ที่คุณมี)
+RC_ETag_Cleaner = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts),script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com, api.rc-backup.com
