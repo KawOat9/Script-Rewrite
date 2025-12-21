@@ -1,8 +1,8 @@
 #!name = StepsApp ✨
 #!desc = StepsApp (Restore Purchases)
 #!author = 🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!category=🔐APP
 #!icon = https://raw.githubusercontent.com/KawOat9/icons/main/StepsApp.png
+#!category=🔐APP
 
 [Script]
 # 1. ปลดล็อกเฉพาะแอป (StepsApp) - วางไว้บนสุดเพื่อให้ทำงานก่อน
