@@ -1,5 +1,5 @@
-#!name=baiduCloud
-#!desc=baiduCloud
+#!name=Baidu Cloud ad ✨
+#!desc=Cuttlefish's own Baidu Cloud ad-removal script
 
 [URL Rewrite]
 # > 百度网盘_启动弹窗@ddgksf2013
