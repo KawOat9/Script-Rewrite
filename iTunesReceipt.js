@@ -1,5 +1,5 @@
 /*
-#!name=iTunes Receipt ✨
+#!name=iTunesReceipt ✨
 #!desc=Unlock Collection 
 #!category=🔐APP
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
