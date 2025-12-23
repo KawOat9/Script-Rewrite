@@ -1,134 +1,93 @@
 /*
- * Reddit Premium 解锁&去广告全兼容脚本
- * 作者：Mikephie
- 
+ * Reddit Premium Unlock & AdBlock (Optimized for Shadowrocket)
+ * ปลดล็อกฟีเจอร์ Premium, ลบโฆษณา, และเปิดเนื้อหา NSFW
+
 [rewrite_local]
-^https?:\/\/gql(-fed)?\.reddit\.com url script-response-body https://raw.githubusercontent.com/Mikephie/Script/main/qx/redditvip.js
+^https?:\/\/gql(-fed)?\.reddit\.com url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/RedditPremium.js
 
 [MITM]
 hostname = gql.reddit.com, gql-fed.reddit.com
 
  */
 
-// ===== 轻量通知 + 冷却 =====
-const APP_NAME = "✨ Reddit ✨";   // ← 只改这个显示名
-const ID = "reddit";              // ← 对应键名，保持纯字母数字（无 emoji）
+const APP_NAME = "✨ Reddit Premium ✨";
+const ID = "reddit_vip";
+const COOLDOWN = 10 * 60 * 1000; // 10 นาที
 
-const EN = "n:"+ID+":e";             // 开关
-const TS = "n:"+ID+":t";             // 时间戳
-const CD = 60000000;                   // 冷却时长：10 分钟（毫秒）
-
-// ---- 通知函数（兼容 QX / Surge / Loon）----
-function notify(t,s,b){
-  if (typeof $notify==="function") $notify(t,s,b);
-  else if ($notification?.post) $notification.post(t,s,b);
-  else console.log("[Notify]", t, s, b);
+// --- ฟังก์ชันแจ้งเตือนแบบป้องกัน Spam ---
+function showNotification() {
+    let now = Date.now();
+    let last = $persistentStore.read(ID + "_time") || 0;
+    if (now - last > COOLDOWN) {
+        $notification.post(APP_NAME, "💖 ปลดล็อกฟีเจอร์พรีเมียมเรียบร้อย", "เพลิดเพลินกับ Reddit แบบไร้โฆษณา");
+        $persistentStore.write(now.toString(), ID + "_time");
+    }
 }
 
-// ---- 判定逻辑 ----
-let enabled = (($persistentStore.read(EN) || "1") === "1");
-if (enabled) {
-  let now  = Date.now();
-  let last = parseInt($persistentStore.read(TS) || "0",10) || 0;
-  if (last===0 || now-last>CD) {
-    notify(APP_NAME,"💖永久解锁 🆚 ⓿❽-⓿❽-❷⓿❽❽💗");
-    $persistentStore.write(String(now), TS);
-  }
-}
-
-// ======= 主处理逻辑 =======
-
-// 递归patch所有可能的会员/图标/广告/NSFW字段
+// --- ฟังก์ชันหลักในการแก้ไขข้อมูล (Recursive Patch) ---
 function deepPatch(obj) {
-  if (!obj || typeof obj !== 'object') return obj;
-  if (Array.isArray(obj)) return obj
-    .filter(item => !(item && (
-      item.__typename === 'AdPost' ||
-      (item.node && (
-        (item.node.cells && item.node.cells.some(cell => cell && cell.__typename === 'AdMetadataCell')) ||
-        item.node.adPayload
-      ))
-    )))
-    .map(deepPatch);
+    if (!obj || typeof obj !== 'object') return obj;
 
-  for (const key in obj) {
-    if (key === 'isPremiumMember' && obj[key] === false) obj[key] = true;
-    if (key === 'isSubscribed' && obj[key] === false) obj[key] = true;
-    if (key === 'isEmployee' && obj[key] === false) obj[key] = true;
-    if (key === 'has_gold_subscription' && obj[key] === false) obj[key] = true;
-    if (key === 'hasGoldSubscription' && obj[key] === false) obj[key] = true;
-    if (key === 'isGold' && obj[key] === false) obj[key] = true;
-    if (key === 'isGoldMember' && obj[key] === false) obj[key] = true;
-    if (key === 'has_subscribed_to_premium' && obj[key] === false) obj[key] = true;
-    if (key === 'isBrandAffiliate' && obj[key] === false) obj[key] = true;
-    if (key === 'user_is_subscriber' && obj[key] === false) obj[key] = true;
-    if (key === 'hide_ads' && obj[key] === false) obj[key] = true;
-    if (key === 'has_ios_subscription' && obj[key] === false) obj[key] = true;
-    if (key === 'seen_premium_adblock_modal' && obj[key] === false) obj[key] = true;
-    if (key === 'has_external_account' && obj[key] === false) obj[key] = true;
-    if (key === 'is_mod' && obj[key] === false) obj[key] = true;
-    if (key === 'locked' && obj[key] === true) obj[key] = false; // 解锁图标
-    if (key === 'commentsPageAds' && Array.isArray(obj[key])) obj[key] = []; // 清空广告
-    if (key === 'isNsfw' && obj[key] === true) obj[key] = false;
-    if (key === 'isNsfwMediaBlocked' && obj[key] === true) obj[key] = false;
-    if (key === 'isNsfwContentShown' && obj[key] === false) obj[key] = true;
-
-    // 自动补全skus字段（如有必要）
-    if (key === 'skus' && Array.isArray(obj[key]) && obj[key].length === 0) {
-      obj[key] = [{
-        kind: "Premium",
-        subscriptionType: "Premium",
-        name: "Premium Subscription",
-        description: "Mobile Annual Premium Subscription",
-        duration: { amount: 1, unit: "YEAR" },
-        id: "1",
-        quantity: "1",
-        renewInterval: "YEAR",
-        requiredPaymentProviders: ["APPLE_INAPP", "GOOGLE_INAPP"],
-        externalProductId: "com.reddit.premium_2",
-        promos: [],
-        tags: []
-      }];
+    // ลบโฆษณาในรายการ (Array)
+    if (Array.isArray(obj)) {
+        return obj
+            .filter(item => {
+                if (!item) return true;
+                // ลบโพสต์โฆษณา (AdPost) และโพสต์ที่แนะนำ (Promoted)
+                const type = item.__typename || (item.node && item.node.__typename);
+                if (type === 'AdPost' || type === 'PromotedPost') return false;
+                if (item.node?.adPayload || item.adPayload) return false;
+                return true;
+            })
+            .map(deepPatch);
     }
 
-    // 递归
-    if (typeof obj[key] === 'object') obj[key] = deepPatch(obj[key]);
-  }
-  return obj;
+    for (const key in obj) {
+        // กลุ่มค่าที่ต้องการให้เป็น true (Premium/Permissions)
+        const toTrue = [
+            'isPremiumMember', 'isSubscribed', 'isEmployee', 'isGold', 
+            'hasGoldSubscription', 'hide_ads', 'user_is_subscriber',
+            'isNsfwContentShown', 'has_subscribed_to_premium'
+        ];
+        
+        // กลุ่มค่าที่ต้องการให้เป็น false (Locks/NSFW Blocks)
+        const toFalse = ['locked', 'isNsfw', 'isNsfwMediaBlocked'];
+
+        if (toTrue.includes(key)) obj[key] = true;
+        if (toFalse.includes(key)) obj[key] = false;
+
+        // ล้างอาเรย์โฆษณา
+        if (key === 'commentsPageAds') obj[key] = [];
+
+        // เติมข้อมูล Skus เพื่อให้หน้าจอแสดงว่ามีอายุการใช้งาน
+        if (key === 'skus' && Array.isArray(obj[key]) && obj[key].length === 0) {
+            obj[key] = [{
+                kind: "Premium",
+                subscriptionType: "Premium",
+                duration: { amount: 1, unit: "YEAR" },
+                externalProductId: "com.reddit.premium_annual"
+            }];
+        }
+
+        // วนลูปชั้นถัดไป
+        if (typeof obj[key] === 'object') {
+            obj[key] = deepPatch(obj[key]);
+        }
+    }
+    return obj;
 }
 
-function processResponse() {
-  let body = $response.body;
-  try {
-    let obj = JSON.parse(body);
-    obj = deepPatch(obj);
-    // 双保险：全局字符串替换，补漏
-    body = JSON.stringify(obj)
-      .replace(/"isPremiumMember":false/g, '"isPremiumMember":true')
-      .replace(/"isSubscribed":false/g, '"isSubscribed":true')
-      .replace(/"isEmployee":false/g, '"isEmployee":true')
-      .replace(/"has_gold_subscription":false/g, '"has_gold_subscription":true')
-      .replace(/"hasGoldSubscription":false/g, '"hasGoldSubscription":true')
-      .replace(/"isGold":false/g, '"isGold":true')
-      .replace(/"isGoldMember":false/g, '"isGoldMember":true')
-      .replace(/"has_subscribed_to_premium":false/g, '"has_subscribed_to_premium":true')
-      .replace(/"isBrandAffiliate":false/g, '"isBrandAffiliate":true')
-      .replace(/"user_is_subscriber":false/g, '"user_is_subscriber":true')
-      .replace(/"hide_ads":false/g, '"hide_ads":true')
-      .replace(/"has_ios_subscription":false/g, '"has_ios_subscription":true')
-      .replace(/"seen_premium_adblock_modal":false/g, '"seen_premium_adblock_modal":true')
-      .replace(/"has_external_account":false/g, '"has_external_account":true')
-      .replace(/"is_mod":false/g, '"is_mod":true')
-      .replace(/"locked":true/g, '"locked":false')
-      .replace(/"isNsfw":true/g, '"isNsfw":false')
-      .replace(/"isNsfwMediaBlocked":true/g, '"isNsfwMediaBlocked":false')
-      .replace(/"isNsfwContentShown":false/g, '"isNsfwContentShown":true');
-    return body;
-  } catch (e) {
-    console.log(`Reddit解锁脚本处理错误: ${e.message}`);
-    return body;
-  }
+// --- ส่วนทำงานหลัก ---
+if (typeof $response !== "undefined" && $response.body) {
+    try {
+        let obj = JSON.parse($response.body);
+        obj = deepPatch(obj);
+        showNotification();
+        $done({ body: JSON.stringify(obj) });
+    } catch (e) {
+        console.log("Reddit Patch Error: " + e);
+        $done({});
+    }
+} else {
+    $done({});
 }
-
-const modifiedBody = processResponse();
-$done({ body: modifiedBody });
