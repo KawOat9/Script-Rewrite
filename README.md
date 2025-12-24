@@ -1,5 +1,4 @@
 # Scripts
-<br/>
 <div align="center">
 <a href="https://github.com/KawOat9/Scripts">
 <img src="https://raw.githubusercontent.com/KawOat9/Script-Rewrite/main/Profile.png?raw=true" alt="Logo" height="100">
@@ -11,7 +10,6 @@
 Advanced Script Converter for 📈 Surge, 🎈 Loon, 🏂 Stash, 🚀 Shadowrocket, 🌀 Quantumult X, Egern, LanceX
 
 <br/>
-<br/>
 <div align="center">
-<sub>Built with ❤️ by <a href="https://www.google.com/search?q=https://github.com/KawOat9">KawOat.DEV</a></sub>
+  <sub>✨ Built with ❤️ by <a href="https://github.com/KawOat9" style="text-decoration: none; color: #dba550;"><b>KawOat.DEV</b></a> ✨</sub>
 </div>
