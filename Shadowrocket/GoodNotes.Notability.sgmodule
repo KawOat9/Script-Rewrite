@@ -1,18 +1,18 @@
 #!name=Goodbility VIP ✨
 #!desc=解锁GoodNotes、Notability内购会员 
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!moduleUrl=https://raw.githubusercontent.com/KawOat9/Scripts/main/Shadowrocket/ddgksf2013.sgmodule
-#!unlockapplist=https://appraven.net/collection/77331175
 #!icon=https://avatars.githubusercontent.com/u/116851128?v=4
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
 [Script]
 # > Goodbility@🅚Ⓐ🅦Ⓞ🅐Ⓣ
-GoodNotes = type=http-response, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/GoodNotes.Notability.js, requires-body=true, max-size=-1, timeout=60
+GoodNotes = type=http-response, pattern=https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/GoodNotes.Notability.js, requires-body=true, max-size=-1, timeout=60
 
-deleteHeaderNotif = type=http-request, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js, timeout=60
+# > deleteHeaderNotif@🅚Ⓐ🅦Ⓞ🅐Ⓣ
+deleteHeaderNotif = type=http-request, pattern=https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js, timeout=60
 
-Notability = type=http-response, pattern=^https?:\/\/notability\.com\/global, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/GoodNotes.Notability.js, requires-body=true, max-size=-1, timeout=60
+# > Notability@🅚Ⓐ🅦Ⓞ🅐Ⓣ
+Notability = type=http-response, pattern=https?:\/\/notability\.com\/global, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/GoodNotes.Notability.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
 hostname = %APPEND% isi.csan.*, notability.com
