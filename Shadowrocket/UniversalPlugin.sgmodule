@@ -1,0 +1,20 @@
+#!name = Universal Plugin & UA Adapter ✨
+#!desc = User-Agent และตัวแปลงปลั๊กอิน Kelee Hub , ddgksf2013 ให้ติดตั้งเข้า Shadowrocket ได้โดยตรง (ต้องมี ScriptHub)
+#!author = Matrix & iKeLee & Gemini
+#!category = 🔗 ADAPTER
+
+[Header Rewrite]
+# 1. ปลอม User-Agent และตั้งค่าการแสดงผลไฟล์ (KeLee & ddgksf2013)
+http-request ^https?:\/\/(.*(kelee\.one|ddgksf2013\.top))(\/.*)? header-replace User-Agent "Surge iOS/3535"
+http-response ^https?:\/\/(.*(kelee\.one|ddgksf2013\.top))(\/.*)? header-add content-disposition "inline"
+http-response ^https?:\/\/(.*(kelee\.one|ddgksf2013\.top))(\/.*)? header-replace content-type "text/plain; charset=utf-8"
+
+# 2. ล้าง Cache สำหรับหน้ารายการปลั๊กอิน
+http-request ^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json header-del if-none-match
+
+[Body Rewrite]
+# 3. แปลงลิงก์จากหน้าเว็บ Kelee ให้เป็นคำสั่งติดตั้งของ Shadowrocket (ผ่าน ScriptHub)
+http-response ^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json "loon://import\?plugin=(https://kelee.one/Tool/Loon/Lpx/(.+).lpx)" "shadowrocket://install?module=http://script.hub/file/_start_/$1/_end_/$2.sgmodule%3Ftype%3Dloon-plugin%26target%3Dshadowrocket-module%26del%3Dtrue%26jqEnabled%3Dtrue"
+
+[MITM]
+hostname = %APPEND% kelee.one, *.kelee.one, ddgksf2013.top, hub.kelee.one, pluginhub.kelee.one
