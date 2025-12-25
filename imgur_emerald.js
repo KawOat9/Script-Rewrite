@@ -4,7 +4,7 @@
  
  [rewrite_local]
  # ปลดล็อก Imgur Emerald (Premium)
-^https?:\/\/api\.imgur\.com\/account\/v1\/purchase\/apple\/verifyReceipt url script-response-body https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/reddit.js
+^https?:\/\/api\.imgur\.com\/account\/v1\/purchase\/apple\/verifyReceipt url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/imgur_emerald.js
 
 [MITM]
 hostname = api.imgur.com
