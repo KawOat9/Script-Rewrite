@@ -16,5 +16,8 @@ http-request ^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json header-del if-n
 # 3. แปลงลิงก์จากหน้าเว็บ Kelee ให้เป็นคำสั่งติดตั้งของ Shadowrocket (ผ่าน ScriptHub)
 http-response ^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json "loon://import\?plugin=(https://kelee.one/Tool/Loon/Lpx/(.+).lpx)" "shadowrocket://install?module=http://script.hub/file/_start_/$1/_end_/$2.sgmodule%3Ftype%3Dloon-plugin%26target%3Dshadowrocket-module%26del%3Dtrue%26jqEnabled%3Dtrue"
 
+[Script]
+qx-resource-preview = type=http-request, pattern=^https:\/\/quantumult\.app\/x\/open-app\/add-resource\?remote-resource=, script-path=https://github.com/chengkongyiban/shadowrocket/raw/main/scripts/qx-resource-preview.js, requires-body=true, max-size=-1, timeout=60
+
 [MITM]
-hostname = %APPEND% kelee.one, *.kelee.one, ddgksf2013.top, hub.kelee.one, pluginhub.kelee.one
+hostname = %APPEND% quantumult.app, ddgksf2013.top, hub.kelee.one, pluginhub.kelee.one, *.kelee.one, 
