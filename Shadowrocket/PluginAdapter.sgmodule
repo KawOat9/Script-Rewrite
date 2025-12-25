@@ -1,0 +1,19 @@
+#!name=Universal Plugin Adapter ✨
+#!desc=แปลงลิงก์ติดตั้งจาก Kelee Hub, Loon-Plugin (Vercel) และ Sooyaaa ให้รองรับ Shadowrocket ผ่าน ScriptHub
+#!category=🔗 ADAPTER
+#!author=Gemini & iKeLee
+#!system=ios
+
+[Body Rewrite]
+# 1. แปลงลิงก์จาก Kelee Plugin Hub (loon:// -> shadowrocket://)
+http-response ^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json "loon://import\?plugin=(https://kelee.one/Tool/Loon/Lpx/(.+).lpx)" "shadowrocket:///add-module?url=http://script.hub/file/_start_/$1/_end_/$2.sgmodule%3Ftype%3Dloon-plugin%26target%3Dshadowrocket-module"
+
+# 2. แปลงลิงก์จาก Loon-Plugin Vercel และ Sooyaaa (รองรับลิงก์ .plugin ทั่วไป)
+http-response ^https?:\/\/(loon-plugin\.vercel\.app|sooyaaabo\.github\.io) "loon://import\?plugin=(https?:\/\/[^\s\"']+)" "shadowrocket:///add-module?url=http://script.hub/file/_start_/$1/_end_/plugin.sgmodule%3Ftype%3Dloon-plugin%26target%3Dshadowrocket-module"
+
+[Header Rewrite]
+# ล้าง Cache เพื่อให้หน้าเว็บโหลดข้อมูลใหม่เสมอ
+^https?:\/\/(hub|pluginhub)\.kelee\.one\/list\.json header-del if-none-match
+
+[MITM]
+hostname = %APPEND% hub.kelee.one, pluginhub.kelee.one, loon-plugin.vercel.app, sooyaaabo.github.io
