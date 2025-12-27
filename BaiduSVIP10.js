@@ -1,6 +1,6 @@
 /*
- * Baidu Netdisk Unlock SVIP 10
- * ปรับปรุงระดับสมาชิกเป็น SVIP 10 และวันหมดอายุปี 2099
+ * Baidu Netdisk Unlock SVIP 10 + Custom Notification
+ * ปลดล็อกสถานะสูงสุด พร้อมข้อความแจ้งเตือนที่หน้าโปรไฟล์
  */
 
 if ($response.body) {
@@ -20,15 +20,26 @@ if ($response.body) {
             "detail_cluster": "svip",
             "status": 0
         }],
-        "svip_level": 10,       // ตั้งค่าเลเวล SVIP 10
-        "v_level": 10,          // ระดับ VIP 10
-        "level": 10,            // เลเวล 10
+        "svip_level": 10,
+        "v_level": 10,
+        "level": 10,
         "is_vip": 1,
         "is_svip": 1,
         "currenttime": Math.floor(Date.now() / 1000),
         "reminder": {
-            "reminderWithContent": [],
-            "advertiseContent": []
+            "reminderWithContent": [
+                {
+                    "content": "ยินดีต้อนรับท่านสมาชิก SVIP 10 ระดับสูงสุด ✨",
+                    "url": "https://pan.baidu.com",
+                    "buttonName": "ตรวจสอบสิทธิ์"
+                }
+            ],
+            "advertiseContent": [
+                {
+                    "content": "สถานะสมาชิกถาวรโดย Shadowrocket (ปี 2099)",
+                    "url": "https://pan.baidu.com"
+                }
+            ]
         },
         "request_id": "7501873289383874371"
     };
