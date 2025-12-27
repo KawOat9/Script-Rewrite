@@ -14,6 +14,21 @@ hostname = pan.baidu.com
 
 */
 
+const APP_NAME = "✨ Baidu Netdisk SVIP ✨";
+const ID = "baidu_svip";
+const COOLDOWN = 10 * 60 * 1000; // 10 นาที
+
+// --- ฟังก์ชันแจ้งเตือนแบบป้องกัน Spam ---
+function showNotification() {
+    let now = Date.now();
+    let last = $persistentStore.read(ID + "_time") || 0;
+    if (now - last > COOLDOWN) {
+        $notification.post(APP_NAME, "💖 ปลดล็อกฟีเจอร์ SVIP เรียบร้อย", "ยินดีต้อนรับท่านสมาชิก SVIP ✨");
+        $persistentStore.write(now.toString(), ID + "_time");
+    }
+}
+
+// --- ฟังก์ชันหลักในการแก้ไขข้อมูล (Recursive Patch) ---
 if ($response.body) {
     let obj = JSON.parse($response.body);
     obj = {
