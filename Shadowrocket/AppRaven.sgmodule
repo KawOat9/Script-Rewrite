@@ -1,11 +1,12 @@
 #!name=AppRaven ✨
-#!desc=应用排行榜
-#!author=🅜ⓘ🅚ⓔ🅟ⓗ🅘ⓔ
-#!icon=https://raw.githubusercontent.com/Mikephie/icons/main/icon/appraven.js
+#!desc=Active Pro!
 #!category=🔐APP
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!openUrl=https://apps.apple.com/app/id1490607195
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/AppRaven.png
 
 [Script]
-AppRaven = type=http-response, pattern=^https:\/\/appraven\.net\/appraven\/graphql, script-path=https://raw.githubusercontent.com/Mikephie/Script/main/qx/AppRaven.js, requires-body=true, max-size=-1, timeout=60
+AppRaven = type=http-response, pattern=^https:\/\/appraven\.net\/appraven\/graphql, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/AppRaven.js, requires-body=true, max-size=-1, timeout=60
 
 #AppRavenPro hostname = appraven.net
 #AppRaven = type=http-response, pattern=https://appraven.net/appraven/graphql, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/AppRaven.js, requires-body=true, max-size=-1, timeout=60
