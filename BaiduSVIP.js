@@ -4,7 +4,7 @@
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!category=🔐APP
 #!openUrl=https://apps.apple.com/app/id547166701
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/baiducloud.png
 𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP.js
