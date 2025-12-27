@@ -1,25 +1,18 @@
 /*
-百度网盘 解锁在线视频倍率/清晰度
-author:🅚Ⓐ🅦Ⓞ🅐Ⓣ
-***************************
-QuantumultX:
-
+#!name=BaiduCloud SVIP ✨
+#!desc=Baidu Netdisk SVIP (ปรับปรุงเวลาปี 2099)
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!category=🔐APP
+#!openUrl=https://apps.apple.com/app/id547166701
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png
+𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 [rewrite_local]
-https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduCloud.SVIP.js
+^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP.js
 
 [mitm]
 hostname = pan.baidu.com
 
-***************************
-Surge4 or Loon:
-
-[Script]
-http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduCloud.SVIP.js
-
-[MITM]
-hostname = pan.baidu.com
-
-**************************/
+*/
 
 if ($response.body) {
     let obj = JSON.parse($response.body);

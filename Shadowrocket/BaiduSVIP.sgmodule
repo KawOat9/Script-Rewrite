@@ -1,13 +1,13 @@
 #!name=BaiduCloud SVIP ✨
-#!desc=Baidu Cloud Drive: SVIP Unlock
+#!desc=Baidu Netdisk SVIP (ปรับปรุงเวลาปี 2099)
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
 #!category=🔐APP
 #!openUrl=https://apps.apple.com/app/id547166701
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png
 
 [Script]
-# KawOat9
-BaiduCloud.SVIP = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduCloud.SVIP.js, requires-body=true
+# Baidu Netdisk SVIP @KawOat9
+BaiduSVIP = type=http-response,pattern=^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user,requires-body=1,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP.js
 
 # NobyDa
 #BaiduCloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true
