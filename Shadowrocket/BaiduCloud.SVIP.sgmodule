@@ -6,8 +6,11 @@
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png
 
 [Script]
+# KawOat9
+BaiduCloud.SVIP = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduCloud.SVIP.js, requires-body=true
+
 # NobyDa
-BaiduCloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true
+#BaiduCloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true
 
 # chengkongyiban
 #bdcloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user, script-path=https://raw.githubusercontent.com/chengkongyiban/shadowrocket/main/scripts/bdcloud.js, requires-body=true
