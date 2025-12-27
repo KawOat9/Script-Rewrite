@@ -19,7 +19,7 @@
 // @connect      dcrypt.it
 // @connect      self
 // @contributionURL https://buymeacoffee.com/stephenp_greasyfork
-// @icon         https://raw.githubusercontent.com/KawOat9/icons/main/Decrypt.png
+// @icon         https://raw.githubusercontent.com/KawOat9/icons/main/corrupted-file.png
 // @downloadURL https://update.greasyfork.org/scripts/403170/Bypass%20FileCrypt.user.js
 // @updateURL https://raw.githubusercontent.com/KawOat9/Scripts/main/Userscripts/Bypass-FileCrypt.js
 // ==/UserScript==
