@@ -30,7 +30,7 @@ function showNotification() {
 
 // --- ฟังก์ชันหลักในการแก้ไขข้อมูล (Recursive Patch) ---
 if ($response.body) {
-	showNotification();
+	showNotification(); // เรียกใช้งานการแจ้งเตือนที่นี่
     let obj = JSON.parse($response.body);
     obj = {
         "product_infos": [{
