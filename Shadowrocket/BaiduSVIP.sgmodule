@@ -7,7 +7,7 @@
 
 [Script]
 # Baidu Netdisk SVIP @KawOat9
-BaiduSVIP = type=http-response,pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP.js
+BaiduSVIP = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, requires-body=1, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP.js
 
 # NobyDa
 #BaiduCloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true
