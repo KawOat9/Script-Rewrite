@@ -1,17 +1,17 @@
-#!name=K̶a̶w̶O̶a̶t̶自用合集 ✨
+#!name=𝐀𝐩𝐩解锁合集 ✨
 #!desc=𝐢𝐓𝐮𝐧𝐞𝐬 & 𝐑𝐞𝐯𝐞𝐧𝐮𝐞𝐂𝐚𝐭 @𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
-#!moduleUrl=https://raw.githubusercontent.com/KawOat9/Scripts/main/Shadowrocket/ddgksf2013.sgmodule
+#!moduleUrl=https://raw.githubusercontent.com/KawOat9/Scripts/main/Shadowrocket/𝐀𝐩𝐩解锁合集.sgmodule
 #!unlockapplist=https://appraven.net/collection/77331175
 #!icon=https://avatars.githubusercontent.com/u/116851128?v=4
 #!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
 
 [Script]
 # ～ BuyiTunes@ddgksf2013
-BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
+BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes.js, requires-body=true, max-size=-1, timeout=60
 
 # ～ RevenueCat@ddgksf2013
-RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
+RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat.js, requires-body=true, max-size=-1, timeout=60
 
 RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js, timeout=60
 

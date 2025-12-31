@@ -20,8 +20,8 @@ https://appraven.net/collection/77299969
 [rewrite_local]
 
 # ～ RevenueCat@ddgksf2013
-^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat%40ddgksf2013.js
-^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeader.js
+^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat.js
+^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js
 
 [mitm]
 
