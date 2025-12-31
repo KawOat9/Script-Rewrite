@@ -1,0 +1,9 @@
+#!name=CARROTWeathe ✨
+#!desc=@beby
+#!author=
+
+[Script]
+http-response https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/carrot.js, requires-body=true, timeout=60, tag=carrot
+
+[MITM]
+hostname = carrotweather.herokuapp.com

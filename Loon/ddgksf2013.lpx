@@ -8,12 +8,12 @@
 
 [Script]
 # ～ BuyiTunes@ddgksf2013
-http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js, requires-body=true, timeout=60, tag=BuyiTunesVip
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes.js, requires-body=true, timeout=60, tag=BuyiTunesVip
 
 # ～ RevenueCat@ddgksf2013
-http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat%40ddgksf2013.js, requires-body=true, timeout=60, tag=RevenueCatVip
+http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat.js, requires-body=true, timeout=60, tag=RevenueCatVip
 
-http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeader.js, timeout=60, tag=RevenueCatDeleteHeader
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js, timeout=60, tag=DeleteHeaderNotif
 
 [MITM]
 hostname = buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com
