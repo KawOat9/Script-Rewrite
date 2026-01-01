@@ -1,0 +1,19 @@
+#!name=Revenuecat & Rc-backup & visionarytech (Split)
+#!desc=如有侵权联系我删除
+#!author=原作者@langkhach270389 @fly
+#!icon=https://avatars.githubusercontent.com/u/132221547?v=4
+#!tag=通杀脚本
+#!system=ios
+
+[Rewrite]
+
+^https:\/\/api\.revenuecat\.com\/.+\/(?:receipts|subscribers\/[^/]+(?:\/attributes)?)$ header https://reven.lovebabyforever.workers.dev
+
+^https:\/\/api\.rc-backup\.com\/.+\/(?:receipts|subscribers\/[^/]+(?:\/attributes)?)$ header https://rc-backup.lovebabyforever.workers.dev
+
+^https:\/\/rc\.visionarytech\.ltd\/.+\/(?:receipts|subscribers\/[^/]+(?:\/attributes)?)$ header https://rc.lovebabyforever.workers.dev
+
+^https:\/\/revenue\.cuto\.app\/.+\/(?:receipts|subscribers\/[^/]+(?:\/attributes)?)$ header https://revencuto.lovebabyforever.workers.dev
+
+[MITM]
+hostname = api.revenuecat.com, api.rc-backup.com, rc.visionarytech.ltd, revenue.cuto.app
