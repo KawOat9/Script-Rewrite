@@ -1,9 +1,0 @@
-#!name=reddit
-#!desc=reddit
-#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/Reddit.png
-
-[Script]
-http-response ^https?:\/\/gql-fed\.reddit\.com\/$ script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/reddit.js, requires-body=true, timeout=60, tag=reddit
-
-[MITM]
-hostname = gql.reddit.com, gql-fed.reddit.com
