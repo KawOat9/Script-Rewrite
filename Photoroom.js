@@ -57,6 +57,4 @@ ojbk.subscriber.subscriptions = {
         'store': 'app_store'
     }
 };
-$done({
-    'body': JSON.stringify(ojbk)
-});
+$done({body: JSON.stringify(ojbk)});
