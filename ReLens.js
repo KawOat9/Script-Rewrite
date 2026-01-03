@@ -16,7 +16,7 @@ hostname = buy.itunes.apple.com
 
 *************************************/
 
-
+/*
 var chxm1023 = JSON.parse($response.body);
 
 chxm1023 = {
@@ -98,3 +98,40 @@ chxm1023 = {
 };
 
 $done({body : JSON.stringify(chxm1023)});
+*/
+/*
+ * ReLens Camera Unlock Lifetime
+ * ปลดล็อกสถานะ Pro ถาวร
+ */
+
+const obj = JSON.parse($response.body);
+
+const product_id = "com.camera.relens.lifetime"; // รหัสสินค้าแบบซื้อขาด
+const exp_date = "2099-12-31T23:59:59Z";
+
+// เตรียมข้อมูล Entitlement
+const data = {
+    "pro": {
+        "expires_date": exp_date,
+        "product_identifier": product_id,
+        "purchase_date": "2023-09-09T09:09:09Z"
+    }
+};
+
+// เตรียมข้อมูล Subscription (ให้แมตช์กัน)
+const sub_data = {
+    [product_id]: {
+        "expires_date": exp_date,
+        "original_purchase_date": "2023-09-09T09:09:09Z",
+        "purchase_date": "2023-09-09T09:09:09Z",
+        "store": "app_store",
+        "ownership_type": "PURCHASED"
+    }
+};
+
+if (obj.subscriber) {
+    obj.subscriber.entitlements = data;
+    obj.subscriber.subscriptions = sub_data;
+}
+
+$done({ body: JSON.stringify(obj) });
