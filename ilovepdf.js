@@ -19,7 +19,7 @@ const notifyKey = "ILovePDF_notify_key";
 const now = Date.now();
 let lastNotifyTime = $persistentStore.read(notifyKey) ? parseInt($persistentStore.read(notifyKey)) : 0;
 if (now - lastNotifyTime > cooldownMs) {
-    $notification.post("✨ILovePDF✨", "✅ ปลดล็อคสำเร็จ!", "หมดอายุ: ⓿❽-⓿❽-❷⓿❽❽");
+    $notification.post("✨ILovePDF✨", "✅ ปลดล็อคสำเร็จ!", "หมดอายุ: ⓿❾-⓿❾-❷⓿❾❾");
     $persistentStore.write(now.toString(), notifyKey);
 }
 // -------- 通知（带冷却）逻辑结束 --------
@@ -28,14 +28,14 @@ if (now - lastNotifyTime > cooldownMs) {
 let body = JSON.parse($response.body);
 
 // 设置基础会员信息
-body.valid_until = "2088-08-08 23:59:59";
+body.valid_until = "2099-09-09 09:09:09";
 body.premium = true;
 body.can_trial = false;
 body.active = 1;
 body.results = {
   "status": 1,
   "vipType": 1,
-  "expiredTime": 3742762088000,
+  "expiredTime": 4092602949000,
   "isVip": true
 };
 

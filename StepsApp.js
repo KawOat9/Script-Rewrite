@@ -18,7 +18,7 @@ const notifyKey = "StepsApp_notify_key";
 const now = Date.now();
 let lastNotifyTime = $persistentStore.read(notifyKey) ? parseInt($persistentStore.read(notifyKey)) : 0;
 if (now - lastNotifyTime > cooldownMs) {
-    $notification.post("✨StepsApp✨", "✅ ปลดล็อคสำเร็จ!", "หมดอายุ: ❷⓿❾❾-⓿❾-⓿❾");
+    $notification.post("✨ ᯓ🏃🏻‍♀️‍➡️StepsApp ✨", "✅ ปลดล็อคสำเร็จ!", "หมดอายุ: ⓿❾-⓿❾-❷⓿❾❾");
     $persistentStore.write(now.toString(), notifyKey);
 }
 /* StepsApp Premium Unlock (Updated with Real IDs) */

@@ -1,0 +1,11 @@
+#!name = ILovePDF ✨
+#!desc = Premium - Unlock
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/ilovepdf.png
+#!category=🔐APP
+
+[Script]
+iLovePDF = type=http-response,pattern=https:\/\/service\.ilovepdf\.com\/v1\/user, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/ilovepdf.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% service.ilovepdf.com
