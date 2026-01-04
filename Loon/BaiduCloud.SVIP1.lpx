@@ -1,0 +1,14 @@
+#!name=BaiduCloud SVIP1 ✨
+#!desc=Baidu Netdisk SVIP
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/baiducloud.png
+#!tag=🔐APP
+#!openUrl=https://apps.apple.com/app/id547166701
+
+[Script]
+http-request ^https:\/\/pan\.baidu\.com\/api\/streaming\?app_id=\d+&type=M3U8_HQ_1080 script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP1.js, timeout=60, tag=BaiduSVIP1
+
+http-response ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP1.js, requires-body=true, timeout=60, tag=BaiduSVIP1
+
+[MITM]
+hostname = pan.baidu.com, afd.baidu.com
