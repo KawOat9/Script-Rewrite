@@ -9,7 +9,7 @@ const headers = {
 
 $httpClient.get({ url, headers }, (error, response, data) => {
   if (error) {
-    $notification.post("🔎 IPPure", "查询失败", "网络错误 / 超时");
+    $notification.post("🔎 IPPure", "❌ การสอบถามล้มเหลว", "⚠️ ข้อผิดพลาดเครือข่าย / ⏱️ หมดเวลา");
     return $done();
   }
 
@@ -17,7 +17,7 @@ $httpClient.get({ url, headers }, (error, response, data) => {
     const d = JSON.parse(data);
 
     const flag = getFlagEmoji(d.countryCode);
-    const type = d.isResidential ? "住宅网络 🏠" : "数据中心 🏢";
+    const type = d.isResidential ? "เครือข่ายที่อยู่อาศัย 🏠" : "ศูนย์ข้อมูล 🏢";
     const score = d.fraudScore ?? 0;
     const risk = getRiskLevel(score);
 
@@ -25,24 +25,24 @@ $httpClient.get({ url, headers }, (error, response, data) => {
       `IP: ${d.ip}\n` +
       `ISP: ${d.asOrganization || "N/A"}\n` +
       `ASN: ${d.asn ? "AS" + d.asn : "N/A"}\n` +
-      `位置: ${flag} ${d.countryCode || ""} ${d.region || ""} ${d.city || ""}\n` +
-      `类型: ${type}\n` +
-      `欺诈值: ${score}\n` +
-      `风险: ${risk}`;
+      `Location: ${flag} ${d.countryCode || ""} ${d.region || ""} ${d.city || ""}\n` +
+      `type: ${type}\n` +
+      `Fraud Score: ${score}\n` +
+      `Risk Level: ${risk}`;
 
-    $notification.post("🔎 IPPure 节点详情", "", msg);
+    $notification.post("🔎 IPPure Info", "", msg);
   } catch (e) {
-    $notification.post("🔎 IPPure", "解析失败", "");
+    $notification.post("🔎 IPPure", "Parsing failed", "");
   }
 
   $done();
 });
 
 function getRiskLevel(score) {
-  if (score <= 25) return "低风险 ✅";
-  if (score <= 50) return "中风险 🟡";
-  if (score <= 75) return "高风险 ⚠️";
-  return "极高风险 ‼️";
+  if (score <= 25) return "ความเสี่ยงต่ำ ✅";
+  if (score <= 50) return "ความเสี่ยงปานกลาง 🟡";
+  if (score <= 75) return "Hความเสี่ยงสูง ⚠️";
+  return "ความเสี่ยงสูงมาก ‼️";
 }
 
 function getFlagEmoji(code) {
