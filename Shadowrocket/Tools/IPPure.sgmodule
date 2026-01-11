@@ -2,7 +2,7 @@
 #!desc=通过IPPure接口检测IP质量。
 #!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ[https://github.com/KawOat9]
 #!icon=https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/IPPure.png
-#!openUrl=https://ippure.com/
+#!openUrl=http://ip.check
 #!category=🛜NetworkTools
 
 [Script]
