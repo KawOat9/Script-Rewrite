@@ -1,12 +1,11 @@
 #!name=IPPure ✨
 #!desc=เปิด Safari แล้วใส่ URL: http://ip.check (ไม่ต้องมี .com)
-#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ[https://github.com/KawOat9]
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ[https://github.com/KawOat9], IPPure[https://ippure.com/]
 #!icon=https://ippure.com/logo.png
 #!homepage=http://ip.check
-#!homepage2=https://ippure.com/
 #!openUrl=http://ip.check
 #!tag=🔎 IPPure Info
-#!system=ios
+#!system=iOS
 
 [Script]
 http-request ^http:\/\/ip\.check script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/IPPure.js, requires-body=true, timeout=10, tag=IPPure
