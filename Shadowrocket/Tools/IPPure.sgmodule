@@ -1,0 +1,12 @@
+#!name=IPPure ✨
+#!desc=通过IPPure接口检测IP质量。
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ[https://github.com/KawOat9]
+#!icon=https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/IPPure.png
+#!openUrl=https://ippure.com/
+#!category=🛜NetworkTools
+
+[Script]
+IPPure = type=http-request, pattern=^http:\/\/ip\.check, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/IPPure.js, requires-body=true, max-size=-1, timeout=10
+
+[MITM]
+hostname = %APPEND% ip.check

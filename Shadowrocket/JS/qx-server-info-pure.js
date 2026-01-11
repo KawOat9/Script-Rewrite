@@ -1,7 +1,8 @@
 
 /***
 
-# IP-Pure
+适用于QuantumultX的IP-Pure查询
+手动在QX[task_local]下添加,点击即可复制
 
 [task_local]
 event-interaction https://ddgksf2013.top/scripts/server-info-pure.js, tag=节点详情(Pure), img-url=checkmark.shield.fill.system
