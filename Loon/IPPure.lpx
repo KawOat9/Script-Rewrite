@@ -1,12 +1,16 @@
-#!name=IPPure
-#!desc=通过IPPure接口检测IP质量。
-#!author=sooyaaabo[https://github.com/sooyaaabo]
-#!icon=https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/IPPure.png
-#!openUrl=https://ippure.com/
-#!tag=功能增强
-#!loon_version=3.3.7(921)
-#!homepage=https://loonlab.103516.xyz/
-#!date=2025-12-28 21:00
+#!name=IPPure ✨
+#!desc=เปิด Safari แล้วใส่ URL: http://ip.check (ไม่ต้องมี .com)
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ[https://github.com/KawOat9]
+#!icon=https://ippure.com/logo.png
+#!homepage=IPPure Check[http://ip.check], IPPure[https://ippure.com/]
+#!openUrl=http://ip.check, https://ippure.com/
+#!tag=🔎 IPPure Info
+#!system=ios
 
 [Script]
+http-request ^http:\/\/ip\.check script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/IPPure.js, requires-body=true, timeout=10, tag=IPPure
+
 generic script-path=https://loon.103516.xyz/Script/IPPure/IPPure.js, timeout=10, tag=IPPure, img-url=leaf
+
+[MITM]
+hostname = ip.check
