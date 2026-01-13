@@ -29,7 +29,7 @@ $httpClient.get({ url, headers }, (error, response, data) => {
       `Risk: ${score} (${risk})`;
 
     // ส่งแจ้งเตือน
-    $notification.post("🔎 IPPure Info", d.ip, msg);
+    $notification.post("🔎 IPPure Info", "", msg);
     
     // คืนค่าหน้าเว็บเปล่าๆ เพื่อให้ Browser หยุดหมุน
     $done({
