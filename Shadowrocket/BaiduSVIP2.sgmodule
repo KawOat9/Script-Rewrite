@@ -1,0 +1,20 @@
+#!name=BaiduCloud SVIP2 ✨
+#!desc=Baidu Netdisk SVIP
+#!author=🅚Ⓐ🅦Ⓞ🅐Ⓣ
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/baiducloud.png
+#!category=🔐APP
+#!openUrl=https://apps.apple.com/app/id547166701
+
+[Script]
+
+# ===== Request =====
+BaiduSVIP2 = type=http-request, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/api\/streaming, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP2.js, timeout=60
+
+# ===== Response =====
+BaiduSVIP2 = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/api\/getsyscfg, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP2.js, requires-body=true, max-size=-1, timeout=60, requires-body=true
+BaiduSVIP2 = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/afd\/entry, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP2.js, requires-body=true, max-size=-1, timeout=60, requires-body=true
+BaiduSVIP2 = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/feed\/cardinfos, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP2.js, requires-body=true, max-size=-1, timeout=60, requires-body=true
+BaiduSVIP2 = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BaiduSVIP2.js, requires-body=true, max-size=-1, timeout=60, requires-body=true
+
+[MITM]
+hostname = %APPEND% pan.baidu.com, afd.baidu.com
