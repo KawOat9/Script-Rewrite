@@ -72,7 +72,7 @@ await Promise.all([check_chatgpt(), check_youtube_premium(), check_netflix()]) /
     })
     .finally(() => {
         // Send a notification containing all results
-        $notification.post(`Test Complete  |  ${hour}:${minutes}`, "", notificationContent); // Send notification
+        $notification.post(`🎉 Test Complete  |  ${hour}:${minutes}`, "", notificationContent); // Send notification
         $done(panel_result); // Display the final panel result
     });
 })();
